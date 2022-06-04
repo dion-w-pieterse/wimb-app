@@ -1,0 +1,12 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s"><span style="font-size: 1.5em; color: Tomato; padding-right: 0.2em;"><i class="fas fa-skull-crossbones"></i></span>Error: No Authorization</h1>
+        <p class="lead">This is a restricted access route. You are not authorized to access this route.</p>
+        <hr class="my-4">
+        <p>Please return to the home page:</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Return to Home</a>
+    </div>
+{% endblock %}
+

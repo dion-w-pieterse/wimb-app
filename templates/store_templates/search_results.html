@@ -1,0 +1,92 @@
+{% extends "page_base.html" %}
+{% block body %}
+    {% if books == None %}
+        <div class="jumbotron mt-4">
+            <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">No Results Found</h1>
+            <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">The search query you entered yielded no search results.</p>
+            <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+        </div>
+    {% else %}
+        <div class="jumbotron mt-4">
+            <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">Search Results</h1>
+            <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">Here are your search results.</p>
+            <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+        </div>
+    {% endif %}
+    
+    <form action="{{ url_for('search') }}" method="get">
+        <div class="row mb-3">
+        {% for genrebatch in genres|batch(5) %}
+            <div class="col-3">
+            {% for genre in genrebatch %}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value= "{{ genre.genre_id }}" id="{{ genre.genre_desc }}" name="genre-{{ genre.genre_desc }}"/>
+                    <label class="form-check-label" for="{{ genre.genre_desc }}">{{ genre.genre_desc }}</label>
+                </div>
+            {% endfor %}
+            </div>
+            
+        {% endfor %}
+            <div class="col-3 offset-3">
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value= "5" id="price-under5" name="price-under5"/>
+                    <label class="form-check-label" for="price-under5">Under $5</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value= "5-15" id="price-between5and15" name="price-between5and15"/>
+                    <label class="form-check-label" for="price-between5and15">$5-$15</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value= "15-30" id="price-between15and30" name="price-between15and30"/>
+                    <label class="form-check-label" for="price-between15and30">$15-$30</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value= "30" id="price-above30" name="price-above30"/>
+                    <label class="form-check-label" for="price-above30">Over $30</label>
+                 </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <h2 class="pl-3">Advanced Filtered Search</h2>
+            <div class="col-10">
+                <input type="text" class="form-control" name="search" placeholder="Search..."/>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-outline-dark form-control" type="submit">Search</button>
+            </div>
+            
+        </div>
+    </form>
+    
+    <hr class="my-4">
+{% if books != None %} 
+{% for book in books %}
+    <div class="row mb-4">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <img class="img-fluid" src="{{ url_for('static', filename=book.path) }}">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h5><a href="{{ url_for('getbook', book_id=book.book_id) }}">{{ book.title }}</a></h5>
+            <p><strong>Genre:</strong> {{ book.genre_desc }}</p>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Price:</strong> ${{ "%.2f"|format(book.price) }}</p>
+            <p><strong>Publish Date:</strong> {{ book.publish_date }}</p>
+            <p><strong>Description:</strong> {{ book.description }}</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <a class="btn btn-primary btn-block" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+            <!-- experiment -->
+            <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                <div class="form-group mt-3">
+                    <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                </div>
+                <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+            </form>
+            <!-- end experiment -->
+        </div>
+    </div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

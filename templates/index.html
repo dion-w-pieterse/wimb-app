@@ -1,0 +1,279 @@
+{% extends "page_base.html" %}
+
+
+
+<!-- Image Slider Code Section -->
+{% block img_slider_section %}
+    <!-- SHOWCASE SLIDER -->
+    <section id="showcase">
+        <div
+                id="myCarousel"
+                class="carousel slide carousel-fade"
+                data-ride="carousel"
+        >
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item slider-bg-gfx-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-center mb-5">
+                            <img class="img-fluid d-none d-lg-block d-xl-block float-left custom_logo pr-2" src="{{ url_for('static', filename='WIMB_Logo.png') }}">
+                            <h1 class="display-3 main_title_style">Welcome to Where's My Book?</h1>
+                            <p class="lead clearfix">
+                                This is the main products page, please browse our books and enjoy.
+                            </p>
+			    <a href="{{ url_for("about") }}" class="btn d-inline-block btn-outline-light btn-lg">Learn Our History</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item slider-bg-gfx-2">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block mb-5">
+
+                            <h2 class="display-3">Join the Book Club &amp; get 20% off</h2>
+                            <p class="lead">Join the book club, and not only receive 20% off but meet up with
+                                other members at the weekly scheduled book meets and discuss new books with other members.
+                            </p>
+			    <a href="{{ url_for("about") }}" class="btn btn-outline-light btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item slider-bg-gfx-3">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h2 class="display-3">New This Week: The Mule Bone</h2>
+                            <p class="lead">
+                                The award winning authors Langston Hughes and Zora Neale do it again 
+				with this superb and engaging thriller.
+                            </p>
+			    <a href="{{ url_for("getbook", book_id=23) }}" class="btn btn-outline-light btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- For the left and right arrows, go under the carousel inner -->
+            <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+{% endblock %}
+<!-- End image slider code section -->
+
+{% block body %}
+
+    <!-- Quick Links Section -->
+    <section class="py-5">
+        <div id="home" class="container">
+            <h2 class="categories_header text-center">Choose a Featured Category:</h2>
+            <div class="row">
+                <!-- We want 3, four col divs, as long as screen is md and up. -->
+                <div class="col-md-2 offset-md-1 mb-4 text-center">
+
+                    <i class="fas fa-globe fa-3x mb-2"></i>
+                    <h5><a class="link_coloring" href="#all_books_start">All Books</a></h5>
+                </div>
+                <div class="col-md-2 mb-4 text-center">
+
+                    <i class="fas fa-pen-nib fa-3x mb-2"></i>
+                    <h5><a class="link_coloring" href="#editors_start">Editor's Choice</a></h5>
+                </div>
+                <div class="col-md-2 mb-4 text-center">
+
+                    <span style="color:red;"><i class="fas fa-fire-alt fa-3x mb-2"></i></span>
+                    <h5><a class="link_coloring" href="#most_pop_start">Most Popular</a></h5>
+                </div>
+                <div class="col-md-2 mb-4 text-center">
+                    <i class="far fa-calendar-alt fa-3x mb-2"></i>
+                    <h5><a class="link_coloring" href="#monthly_specials_start">Monthly Specials</a></h5>
+                </div>
+                <div class="col-md-2 mb-4 text-center">
+                    <i class="fab fa-rebel fa-3x mb-2"></i>
+                    <h5><a class="link_coloring" href="#featured_genre_start">Featured Genre</a></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- END Quick Links Section -->
+
+    <h2 id="all_books_start" class="custom_header top_section_header os-animation" data-animation="animate__animated animate__lightSpeedInLeft" data-delay=".01s">All Books Listed:</h2>
+
+    <div class="row">
+        {% for book in all_books %}
+            <div class="col-md-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">
+                <div class="card mb-3 custom_height">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text custom_truncate"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>${{ "%.2f"|format(book.price) }}</strong></p>
+                        <a class="btn btn-primary btn-block custom_positioning" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                        <!-- experiment -->
+                            <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                                <div class="form-group mt-3">
+                                    <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                                </div>
+                                <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+                            </form>
+                        <!-- end experiment -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2 id="editors_start" class="custom_header os-animation" data-animation="animate__animated animate__lightSpeedInLeft" data-delay=".01s">Editor's Choice Books:</h2>
+    <div class="row">
+        {% for book in editors_books %}
+            <div class="col-md-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">
+                <div class="card mb-3 custom_height">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text custom_truncate"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>${{ "%.2f"|format(book.price) }}</strong></p>
+                        <a class="btn btn-primary btn-block" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                        <!-- experiment -->
+                        <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                            <div class="form-group mt-3">
+                                <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                            </div>
+                            <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+                        </form>
+                        <!-- end experiment -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <h2 id="most_pop_start" class="custom_header os-animation" data-animation="animate__animated animate__lightSpeedInLeft" data-delay=".01s">Most Popular Books:</h2>
+    <div class="row">
+        {% for book in most_popular %}
+            <div class="col-md-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">
+                <div class="card mb-3 custom_height">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text custom_truncate"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>${{ "%.2f"|format(book.price) }}</strong></p>
+                        <a class="btn btn-primary btn-block" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                        <!-- experiment -->
+                        <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                            <div class="form-group mt-3">
+                                <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                            </div>
+                            <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+                        </form>
+                        <!-- end experiment -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <h2 id="monthly_specials_start" class="custom_header os-animation" data-animation="animate__animated animate__lightSpeedInLeft" data-delay=".01s">Monthly Specials Books:</h2>
+    <div class="row">
+        {% for book in monthly_specials %}
+            <div class="col-md-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">
+                <div class="card mb-3 custom_height">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text custom_truncate"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>${{ "%.2f"|format(book.price) }}</strong></p>
+                        <a class="btn btn-primary btn-block" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                        <!-- experiment -->
+                        <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                            <div class="form-group mt-3">
+                                <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                            </div>
+                            <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+                        </form>
+                        <!-- end experiment -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2 id="featured_genre_start" class="custom_header os-animation" data-animation="animate__animated animate__lightSpeedInLeft" data-delay=".01s">Featured Genre: Sci-Fi</h2>
+    <div class="row">
+        {% for book in scifi_books %}
+            <div class="col-md-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">
+                <div class="card mb-3 custom_height">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.status_desc }}</p>
+                        <p class="card-text custom_truncate"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>${{ "%.2f"|format(book.price) }}</strong></p>
+                        <a class="btn btn-primary btn-block" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                        <!-- experiment -->
+                        <form class="" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+                            <div class="form-group mt-3">
+                                <input class="d-none" type="text" name="quantity" class="form-control input-number" value="1" min="1" max="1">
+                            </div>
+                            <button type="submit" class="btn btn-block btn-info">Quick Add Cart</button>
+                        </form>
+                        <!-- end experiment -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Auto scrolling feature -->
+    <a href="#home" class="auto-scroll-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- End of auto scrolling feature -->
+
+{% endblock %}
+
+
+{% block custom_script %}
+    <script>
+    //Logic: Main Image Slider
+        $(".carousel").carousel({
+            interval: 6000,
+            pause: "hover"
+        });
+
+    //Logic: Auto-scroll Arrow (bottom right)
+    //logic credit goes to: Drew Ryan at https://w3newbie.com/
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                //check scroll past 150 px
+                if ($(this).scrollTop() > 150) {
+                    $('.auto-scroll-top').fadeIn();
+                }
+                else {
+                    //if within 150px from top
+                    $('.auto-scroll-top').fadeOut();
+                }
+            });
+        });
+    </script>
+{% endblock %}

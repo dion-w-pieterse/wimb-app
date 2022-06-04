@@ -1,0 +1,44 @@
+body {
+    background-color: #F8F9FA !important;
+}
+
+div.jumbotron {
+
+}
+
+/* ******************************
+Style: Navigation
+********************************* */
+.logo-icon-navbar {
+    vertical-align:middle !important;
+    width:57px !important;
+    height:32px !important;
+}
+
+nav.navbar {
+    margin-bottom: 0rem !important;
+}
+
+/* ******************************
+Style: Footer
+********************************* */
+.footer_styling {
+    background-color: #E9ECEF !important;
+    margin-top: 350px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+ul.list_team {
+    list-style-type:none !important;
+}
+
+.logo-icon-footer {
+    vertical-align:middle !important;
+    width:70px !important;
+    height:39px !important;
+}
+
+a.smi_color {
+    color: #000 !important;
+}

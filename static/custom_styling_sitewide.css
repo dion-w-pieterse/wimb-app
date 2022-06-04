@@ -1,0 +1,284 @@
+
+/* ******************************
+Style: General Styling
+********************************* */
+body {
+    background-color:#F8F9FA !important;
+}
+
+/* Custom Auto Scroll up to top of page (Drew Ryan credit listed in JS code snippet) */
+.auto-scroll-top svg.svg-inline--fa {
+    font-size: 8rem !important;
+    height: 4rem!important;
+    color: #7C7C7D!important;
+    background: #fff!important;
+}
+
+a.auto-scroll-top:hover {
+    opacity: 0.6;
+}
+
+a.auto-scroll-top {
+    opacity: 0.3;
+    z-index: 1000;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    display: none;
+    position: fixed;
+}
+
+/* ******************************
+Style: Navigation
+********************************* */
+.logo-icon-navbar {
+    vertical-align:middle !important;
+    width:57px !important;
+    height:32px !important;
+}
+
+/* ******************************
+Style: Footer
+********************************* */
+
+.footer_styling {
+    background-color: #E9ECEF !important;
+    margin-top: 150px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+.logo-icon-footer {
+    vertical-align:middle !important;
+    width:70px !important;
+    height:39px !important;
+}
+
+a.smi_color {
+    color: #000 !important;
+}
+
+/* ******************************
+Style: Headers (Products page and site-wide)
+********************************* */
+h1.main_title_style {
+    font-size: 3.5rem;
+}
+
+h2.custom_header {
+    margin-top: 5rem !important;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid #D1D4D7 !important;
+}
+
+h2.top_section_header {
+    margin-top: 1rem !important;
+}
+
+img.custom_logo {
+    max-width:25% !important;
+}
+
+p.custom_truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul.remove_list_style {
+    list-style-type: none !important;
+    padding-left:0 !important;
+}
+
+ul.remove_list_style > li {
+    display:inline-block;
+}
+
+div.custom_height {
+    /*position:relative;*/
+    /*min-height: 610px !important;*/
+    /*overflow:hidden;*/
+}
+
+a.custom_positioning {
+    /*position:absolute;*/
+    /*width: 100px;*/
+    /*bottom:1.25rem;*/
+}
+
+/* ******************************
+Style: Login
+********************************* */
+a.forgot_pw_style {
+
+}
+
+
+/* ******************************
+Style: Main Products Image Slider
+********************************* */
+.carousel-item {
+    height: 450px;
+}
+
+.slider-bg-gfx-1 {
+    background: url("main-slide-cta.jpg");
+    background-size: cover;
+    background-position:0px -140px;
+}
+
+.slider-bg-gfx-2 {
+    background: url("offer-2.jpg");
+    background-size: cover;
+}
+
+.slider-bg-gfx-3 {
+    background: url("Bone-a-fied-Trouble_1400x927.jpg");
+    background-size: cover;
+}
+
+/* Style: Categories Section (Main Products Page) */
+h2.categories_header {
+    margin-bottom: 2rem;
+}
+
+/* ******************************
+Style: Categories Section
+********************************* */
+a.link_coloring {
+    color: #000;
+}
+
+a.link_coloring:hover {
+    color: #0056b3;
+}
+
+
+
+/* **************************
+Style: Main Products Section
+***************************** */
+div.remove_padding_div {
+    /*padding-top:0px !important;*/
+    /*padding-bottom:0px !important;*/
+    /*padding:0px !important;*/
+    /*margin:0px !important;*/
+    /*max-height:100% !important;*/
+
+}
+
+/* ******************************
+Style: About Page
+********************************* */
+.outer-fill-area {
+    z-index: -1;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: table;
+}
+
+.about-wrapper {
+    top: 0;
+    left: 0;
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.about-core {
+    position: fixed;
+    background-image: url('about-bg.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-position: center center;
+    will-change: transform;
+    display: table;
+}
+
+/* Landing Page Description Text */
+.desc-text {
+    position: absolute;
+    top: 38%;
+    z-index: 1;
+    max-width: 100%;
+    width: 100%;
+}
+
+.desc-text h1 {
+    padding-bottom: 1rem;
+    font-size: 4.5rem;
+    text-shadow: .1rem .1rem .8rem black;
+    letter-spacing: .3rem;
+}
+
+.desc-text h3 {
+    padding-bottom: 2rem;
+    text-shadow: .1rem .1rem .5rem black;
+    font-size: 2.5rem;
+}
+
+.desc-text .btn-lg {
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-width: medium;
+}
+
+/* bouncing book icon */
+.bouncing-book {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+.down-book .svg-inline--fa {
+    font-size: 2.2rem;
+    color: white;
+    opacity: .3;
+}
+
+.down-book .svg-inline--fa:hover {
+    opacity: .8;
+}
+
+/* end of fill screen section */
+
+div.quality-box-style span {
+    color: #0099ce;
+}
+
+div.facts-box-style>span.facts-icons {
+    color: #0099ce;
+}
+
+.about-header-style {
+    margin-top:4rem !important;
+    margin-bottom: 2rem !important;
+}
+
+div.header-bottom-border {
+    margin: 0 auto 4rem;
+    width: 8rem;
+    height: 0.3rem;
+    background-color:#0099ce;
+}
+
+/* ******************************
+Style: Photos Section
+ ***************************** */
+
+
+/* ******************************
+Style: Footer Section
+********************************* */
+ul.list_team {
+    list-style-type:none !important;
+}
+

@@ -1,0 +1,65 @@
+{% extends "page_base.html" %}
+{% block body %}
+
+<div class="jumbotron mt-5">
+<h1 class="display-6">Congratulations. You made it to the {{ book.title }} book page.</h1>
+<p class="lead">Here are the book's details and what to expect when trying to access the values.</p>
+
+<img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+<ul class="list-group">
+	<li class="list-group-item">
+	book_id = {{ book.book_id }}
+	</li>
+	<li class="list-group-item">
+	title = {{ book.title }}
+	</li>
+	<li class="list-group-item">
+	author = {{ book.author }}
+	</li>
+	<li class="list-group-item">
+	publisher = {{ book.publisher }}
+	</li>
+	<li class="list-group-item">
+	language = {{ book.language }}
+	</li>
+	<li class="list-group-item">
+	pages = {{ book.pages }}
+	</li>
+	<li class="list-group-item">
+	publish_date = {{ book.publish_date }}
+	</li>
+	<li class="list-group-item">
+	isbn = {{ book.isbn }}
+	</li>
+	<li class="list-group-item">
+	price = {{ book.price }}
+	</li>
+	<li class="list-group-item">
+	description = {{ book.description }}
+	</li>
+	<li class="list-group-item">
+	image_id = {{ book.image_id }}
+	</li>
+</ul>
+<ul class="list-group">
+{% for review in reviews %}
+	<li class="list-group-item">
+	<h4>{{ review.username }} posted:</h4> 
+	<h5>{{ review.review_desc }}</h5>
+	</li>
+{% endfor %}
+</ul>
+<!-- for adding to cart -->
+<form class="form-inline" action="{{ url_for('addItemToCart', book_id=book.book_id) }}" method="post">
+	Quantity: <input type="text" name="quantity" value="1"/>
+	<button type="submit">add to cart</button>
+</form>
+
+<!-- for creating a new review -->
+<form action="{{ url_for('addReview', book_id=book.book_id) }}" method="post">
+	<textarea name="review" rows="4" type="text"></textarea>
+	<button type="submit">add review</button>
+</form>
+</div>
+
+{% endblock %}

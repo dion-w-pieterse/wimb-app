@@ -1,0 +1,396 @@
+
+
+<!--CHECKOUT PAGE-->
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="checkoutpage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Where's My Book- Checkout Page</title>
+  </head>
+  <!--Nav bar new-->
+<div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url_for('index') }}">Where Is My Book?</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('account') }}">Account</a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('admin.index') }}">Admin Dashboard</a>
+                  </li>
+              
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+</div>
+<!--end nav bar new-->
+
+  <!--body will have white color-->
+  <body class="container rounded bg-white">
+    <div class="container rounded bg-white">
+      <div class="row d-flex justify-content-center pb-5">
+          <div class="col-sm-5 col-md-5 ml-1">  
+            <!--new code 3 lines above-->
+            <div class="container">
+              <!--5 units of padding applied to the name-->
+              <div class="py-5 text-center">
+                <h2>Checkout Page</h2>
+
+              </div>
+            </div>
+
+
+        <!--Customer Information container-->
+            <div class="container text-center">
+              <!--class= margin of 3 units-->
+              <h4 class="mb-3">Customer Information</h4>
+              <form action="" class="form-size" novalidate>
+                <!--forms become too big so give div to row and column with units of how long you want it to be, here 5 units-->
+                <div class="row">
+                  <div class="col-sm-5">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="firstName" type="text" class="form-control" placeholder="John" required>
+                    <!--class for invalid form-->
+                    <div class="invalid-feedback">
+                      Enter a Valid First Name
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="lastName" type="text" class="form-control" placeholder="Doe" required>
+                    <!--class for invalid form-->
+                    <div class="invalid-feedback">
+                      Enter a Valid Last Name
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <label for="email" class="form-label">Email</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input id="email" type="email" class="form-control" placeholder="Johndoe@gmail.com" required>
+                      <!--class for invalid form-->
+                    </div>
+                    <div class="invalid-feedback">
+                      Enter a Valid Email 
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+        <!--is type int or number????????-->
+                    <input id="phoneNumber" type="int" class="form-control" placeholder="555-555-5555" required>
+                    <!--class for invalid form-->
+                    <div class="invalid-feedback">
+                      Enter a Valid Phone Number
+                    </div>
+                  </div> 
+                </div>
+              </form>
+            </div>
+        
+            <!--margin-->    
+            <hr class="my-4">
+
+        <!--Contact Information container-->
+            <div class="container text-center">
+              <!--class= margin of 3 units-->
+              <h4 class="mb-3">Contact Information</h4>
+              <form action="" class="form-size">
+                <!--forms become too big so give div to row and column with units of how long you want it to be, here 5 units-->
+                <div class="row">
+                  <div class="col-sm-5">
+                    <label for="address" class="form-label">Address</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="address" type="text" class="form-control" placeholder="200 East Street" required>
+                    
+                    
+                  </div>
+                  <div class="col-sm-5">
+                    <label for="city" class="form-label">City</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="city" type="text" class="form-control" placeholder="Fullerton" required>
+                    
+                    
+                  </div>
+                  <div class="col-sm-3">
+                    <label for="zipcode" class="form-label">Zip code</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="zipcode" type="int" class="form-control" placeholder="55555" required>
+                    
+                    
+                  </div>
+                  <div class="col-sm-3">
+                    <label for="state" class="form-label">State</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="state" type="text" class="form-control" placeholder="California" required>
+                    
+                    
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="country" class="form-label">Country</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="country" type="text" class="form-control" placeholder="United States" required>
+                    
+                    
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          
+  
+
+            <!--margin-->    
+            <hr class="my-4">
+
+
+        <!--section for the readio buttons-->
+            <div class="container text-center">
+              <h4 class="mb-3">Payment Method</h4>
+              <div class="form-check">
+                <!--checked-> automatically checked as default-->
+                <input id="creditcard" name="paymentmethod" type="radio" class="form-check-input" checked required>
+                <label for="creditcard">Credit Card</label> 
+              </div>
+              <div class="form-check">
+                <!--checked-> automatically checked as default-->
+                <input id="debitcard" name="paymentmethod" type="radio" class="form-check-input" required>
+                <label for="debitcard">Debit Card</label> 
+              </div>
+            </div>
+
+            <!--margin-->    
+            <hr class="my-4">
+            
+
+        <!--Credit Card Infromation container-->
+            <div class="container text-center">
+              <!--class= margin of 3 units-->
+              <h4 class="mb-3">Credit Card Information</h4>
+              <form action="" class="form-size" novalidate>
+                <!--forms become too big so give div to row and column with units of how long you want it to be, here 5 units-->
+                <!--margins on y axis my, gutters on x axis gy-->
+                <div class="row my-3 gy-3">
+                  <div class="col-sm-5">
+                    <label for="creditcardnumber" class="form-label">Credit Card Number</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="creditcardnumber" type="int" class="form-control" required>
+                    
+                  </div>
+        <!-- ****try col-md-6 for more text spacing*****-->
+                  <div class="col-sm-5">
+                    <label for="creditcardname" class="form-label">Name on Credit Card</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="creditcardname" type="text" class="form-control" placeholder="John Ron Doe" required>
+                    <!--class for invalid form-->
+                    <small class="text-muted">Full name as printed on the credit card</small>
+                    
+                  </div>
+                  <div class="col-sm-5">
+                    <label for="ccsecuritynumber" class="form-label">Security Number (CVV)</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="ccsecuritynumber" type="int" class="form-control" required>
+                    <!--class for invalid form-->
+                    <small class="text-muted">Number Behind the Credit Card </small>
+                    
+                  </div> 
+                  <div class="col-sm-5">
+                    <label for="ccexpirationdate" class="form-label">Expiration Date</label>
+                    <!--form controll will apply styling, placeholder-An example name in text field, required- it is a required field. -->
+                    <input id="ccexpirationdate" type="int" class="form-control" required>
+                    
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+
+            
+          <!--Order summary block--->
+          <div class="col-sm-4 col-md-5 offset-md-1">
+            <div class="py-4 d-flex justify-content-end">
+                
+            </div>
+            <div class="bg-light rounded d-flex flex-column">
+                                
+                <!--Order Details Block-->
+                <div class="container px-4 py-5 mx-auto">
+                  <h2><strong><center>Order Details </center></strong></h2>
+                  <div class="row d-flex justify-content-center">
+                   
+                      <div class="col-5">
+                          <h6 class="heading">Book Details</h6>
+                      </div>
+                      <div class="col-7">
+                          <div class="row text-right">
+                              <div class="col-4">
+                                  <h6 class="mt-2">Book Type</h6>
+                              </div>
+                              <div class="col-4">
+                                  <h6 class="mt-2">Quantity</h6>
+                              </div>
+                              <div class="col-4">
+                                  <h6 class="mt-2">Price</h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-center border-top">
+                      <div class="col-5">
+                          <div class="row d-flex">
+                              <div class="book"> <img src="thewolfborder.png" class="book-img"> </div>
+                              <div class="my-auto flex-column d-flex pad-left">
+                                  <h6 class="book-text text-center">The Wolf Border - A Novel</h6>
+                                  <p class="book-text text-center">Sarah Hall</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="my-auto col-7">
+                          <div class="row text-right">
+                              <div class="col-4">
+                                  <p class="book-text">Digital</p>
+                              </div>
+                              <div class="col-4">
+                                  <div class="row d-flex justify-content-end px-3">
+                                      <p class="mb-0" id="cnt1">1</p>
+                                      <div class="d-flex flex-column plus-minus"> <span class="vsm-text plus">+</span> <span class="vsm-text minus">-</span> </div>
+                                  </div>
+                              </div>
+                              <div class="col-4">
+                                  <h6 class="book-text">$120</h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-center border-top">
+                      <div class="col-5">
+                          <div class="row d-flex">
+                              <div class="book"> <img src="athousandpiecesofyou.jfif" class="book-img"> </div>
+                              <div class="my-auto flex-column d-flex pad-left">
+                                  <h6 class="book-text text-center">A Thousand Pieces of You</h6>
+                                  <p class="book-text text-center">Claudia Grey</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="my-auto col-7">
+                          <div class="row text-right">
+                              <div class="col-4">
+                                  <p class="book-text">Paperback</p>
+                              </div>
+                              <div class="col-4">
+                                  <div class="row d-flex justify-content-end px-3">
+                                      <p class="mb-0" id="cnt2">1</p>
+                                      <div class="d-flex flex-column plus-minus"> <span class="vsm-text plus">+</span> <span class="vsm-text minus">-</span> </div>
+                                  </div>
+                              </div>
+                              <div class="col-4">
+                                  <h6 class="book-text">$130</h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="border-top px-4 mx-6 strong"> </div>
+               
+                <!--Order Summary Block-->
+                <div class="p-2 ml-3">
+                  <h4><center>Order Summary</center></h4>
+              </div>
+              <div class="p-2 d-flex">
+                  <div class="col-8"><strong>Items in Cart (#)</strong></div>
+              </div>
+              <div class="p-2 d-flex">
+                  <div class="col-8">2 Items</div>
+                  <div class="ml-auto">$250.00</div>
+              </div>
+              <div class="p-2 d-flex">
+                  <div class="col-8">Shipping</div>
+                  <div class="ml-auto">+ $20.00</div>
+              </div>
+              <div class="p-2 d-flex">
+                  <div class="col-8">Tax</div>
+                  <div class="ml-auto">+ $10.00</div>
+              </div>
+              <div class="border-top px-4 mx-3"> </div>
+              
+              <div class="p-2 d-flex pt-3">
+                  <div class="col-8"><b>Total</b></div>
+                  <div class="ml-auto"><b class="green">$280.00</b></div>
+              </div>
+
+            </div>
+        </div>
+      
+          
+    <!--margin-->    
+          <hr class="my-4">
+    <!--Send Order Button-->
+          <div class="container text-center col-md-5">
+            <div class="py-4 d-flex justify-content-end">
+                
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">Send Order</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

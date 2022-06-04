@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Font Awesome -->
+
+    <!-- end font awesome -->
+
+    <!-- Site custom CSS Styling -->
+    <link href="{{ url_for('static', filename='custom_styling_sitewide.css') }}" rel="stylesheet">
+
+    <!-- Styling to go along with custom_scripts.js -->
+    <link href="{{ url_for('static', filename='custom_scripts_styling.css') }}" rel="stylesheet">
+
+    <!-- Animate.css CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    {% block custom_css %}
+
+    {% endblock %}
+
+    <title>Home Page - Where's My Book - Products</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo_icon_50x28.ico') }}" />
+    {% block scripts %}
+    {% endblock %}
+</head>
+<body>
+
+<!-- Navigation Bar container-->
+<div class="container">
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('index') }}"><img class="logo-icon-navbar" src="{{ url_for('static', filename='logo-vector.svg') }}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                {% if not current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    </li>
+                {% endif %}
+                {% if not current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                {% endif %}
+                {% if current_user.is_authenticated and current_user.user_role != 'Admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('account') }}">Account</a>
+                    </li>
+                {% endif %}
+                {% if current_user.is_authenticated and current_user.user_role != 'Admin' and current_user.password_reset == 'True' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('reset_password') }}">Reset Username/Password</a>
+                    </li>
+                {% endif %}
+
+                {% if current_user.is_authenticated and current_user.user_role == 'Admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('admin.index') }}">Admin Dashboard</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('manageCart') }}"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                {% endif %}
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}" method="get">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- end navbar -->
+</div>
+<!-- End Navbar container-->
+
+
+<!-- Image Slider Code Section -->
+{% block img_slider_section %}
+{% endblock %}
+<!-- End image slider code section -->
+
+<div class="container">
+{% block body %}
+{% endblock %}
+</div><!-- end container -->
+
+
+<footer class="footer_styling">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img class="logo-icon-footer d-inline-block mr-3 mb-2" src="{{ url_for('static', filename='logo-vector.svg') }}"><h4 class="d-inline-block align-top">Where's My Book?</h4>
+                <p>Our bookstore is dedicated to satifying book readers all around the world with fast, dependable delivery
+                of the latest titles and bestseller books hot off the press. Please enjoy browsing our available inventory
+                and we look forward to doing business with you.</p>
+                <a class="d-inline-block mr-2 smi_color" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a class="d-inline-block mr-2 smi_color" href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a class="d-inline-block mr-2 smi_color" href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a class="d-inline-block smi_color" href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h4 class="text-center">Group 8 Team Members</h4>
+                <ul class="text-center list_team">
+                    <li>Dion Wayne Pieterse</li>
+                    <li>Jacob Rapmund</li>
+                    <li>Aditi Patil</li>
+                    <li>Alberto Perez</li>
+                </ul>
+                <p class="text-center">&copy; Group 8 - Where's My Book?</p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h4 class="text-center">Learn About Where's My Book?</h4>
+                <p>Please take a few minutes and read about the origins of the bookstore, and what our company represents.</p>
+                <a href="{{ url_for('about') }}" class="btn d-inline-block btn-outline-dark btn-sm">About Us</a>
+            </div>
+        </div><!-- end footer row -->
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<!-- Custom JS Scripts -->
+<script src="{{ url_for('static', filename='js/custom_scripts.js') }}"></script>
+
+<!-- Waypoints for activating animations when scroll down certain points -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous"></script>
+
+<!-- Font Awesome Using Free Non-Kit Version -->
+<script src="https://use.fontawesome.com/releases/v5.13.1/js/all.js"></script>
+
+<!-- Lightbox2 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"
+        integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ=="
+        crossorigin="anonymous"></script>
+
+<!-- Owl Carousel for team members and testimonials -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+
+<!-- Counter Up for counting numbers up animation -->
+<script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+
+{% block custom_script %}
+
+{% endblock %}
+
+
+
+</body>
+</html>

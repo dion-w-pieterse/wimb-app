@@ -1,0 +1,427 @@
+{% extends "page_base.html" %}
+{% block body %}
+<div class="jumbotron mt-5">
+	<h1>Checkout Page</h1>
+	<h2>Please enter in or verify your information below...</h2>
+</div>
+
+<h2>User Details Update Form</h2>
+
+    <form action="/checkout" method="POST">
+        {{ update_form.csrf_token }}
+        <div class="form-group">
+            <label for="InputFirstName1">First Name</label>
+            <input type="text" name="first_name" class="form-control" id="InputFirstName1" aria-describedby="firstNameHelp" {% if found_user != None %}placeholder="{{ found_user.first_name }}"{% else %}placeholder="John"{% endif %}>
+            <small id="firstNameHelp" class="form-text text-muted">Your first name will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.first_name.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="InputFirstName1">Last Name</label>
+            <input type="text" name="last_name" class="form-control" id="InputLastName1" aria-describedby="lastNameHelp" {% if found_user != None %}placeholder="{{ found_user.last_name }}"{% else %}placeholder="John"{% endif %}>
+            <small id="lastNameHelp" class="form-text text-muted">Your last name will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.last_name.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="Inputemail1">Email</label>
+            <input type="text" name="email" class="form-control" id="Inputemail1" aria-describedby="emailHelp" {% if found_user != None %}placeholder="{{ found_user.email }}"{% else %}placeholder="johndoe@example.com"{% endif %}>
+            <small id="emailHelp" class="form-text text-muted">Your email will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.email.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="Inputephone1">Phone</label>
+            <input type="text" name="phone" class="form-control" id="Inputphone1" aria-describedby="phoneHelp" {% if found_user != None %}placeholder="{{ found_user.phone }}"{% else %}placeholder="###-###-####"{% endif %}>
+            <small id="phoneHelp" class="form-text text-muted">Your phone number will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.phone.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="Inputaddress1">Address</label>
+            <input type="text" name="addr" class="form-control" id="Inputaddress1" aria-describedby="addrHelp" {% if found_user != None %}placeholder="{{ found_user.addr }}"{% else %}placeholder="123 Main St, Apt# 200"{% endif %}>
+            <small id="addrHelp" class="form-text text-muted">Your phone number will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.addr.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="Inputcity1">City</label>
+            <input type="text" name="city" class="form-control" id="Inputcity1" aria-describedby="cityHelp" {% if found_user != None %}placeholder="{{ found_user.city }}"{% else %}placeholder="San Francisco"{% endif %}>
+            <small id="cityHelp" class="form-text text-muted">Your city will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.city.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+
+
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class="form-control" id="state" name="state">
+                <option {% if found_user != None and found_user.state == 'AL' %} selected {% endif %}>AL</option>
+                <option {% if found_user != None and found_user.state == 'AK' %} selected {% endif %}>AK</option>
+                <option {% if found_user != None and found_user.state == 'AZ' %} selected {% endif %}>AZ</option>
+                <option {% if found_user != None and found_user.state == 'AR' %} selected {% endif %}>AR</option>
+                <option {% if found_user != None and found_user.state == 'CA' %} selected {% endif %}>CA</option>
+                <option {% if found_user != None and found_user.state == 'CO' %} selected {% endif %}>CO</option>
+                <option {% if found_user != None and found_user.state == 'CT' %} selected {% endif %}>CT</option>
+                <option {% if found_user != None and found_user.state == 'DE' %} selected {% endif %}>DE</option>
+                <option {% if found_user != None and found_user.state == 'FL' %} selected {% endif %}>FL</option>
+                <option {% if found_user != None and found_user.state == 'GA' %} selected {% endif %}>GA</option>
+                <option {% if found_user != None and found_user.state == 'HI' %} selected {% endif %}>HI</option>
+                <option {% if found_user != None and found_user.state == 'ID' %} selected {% endif %}>ID</option>
+                <option {% if found_user != None and found_user.state == 'IL' %} selected {% endif %}>IL</option>
+                <option {% if found_user != None and found_user.state == 'IN' %} selected {% endif %}>IN</option>
+                <option {% if found_user != None and found_user.state == 'IA' %} selected {% endif %}>IA</option>
+                <option {% if found_user != None and found_user.state == 'KS' %} selected {% endif %}>KS</option>
+                <option {% if found_user != None and found_user.state == 'KY' %} selected {% endif %}>KY</option>
+                <option {% if found_user != None and found_user.state == 'LA' %} selected {% endif %}>LA</option>
+                <option {% if found_user != None and found_user.state == 'ME' %} selected {% endif %}>ME</option>
+                <option {% if found_user != None and found_user.state == 'MD' %} selected {% endif %}>MD</option>
+                <option {% if found_user != None and found_user.state == 'MA' %} selected {% endif %}>MA</option>
+                <option {% if found_user != None and found_user.state == 'MI' %} selected {% endif %}>MI</option>
+                <option {% if found_user != None and found_user.state == 'MN' %} selected {% endif %}>MN</option>
+                <option {% if found_user != None and found_user.state == 'MS' %} selected {% endif %}>MS</option>
+                <option {% if found_user != None and found_user.state == 'MO' %} selected {% endif %}>MO</option>
+                <option {% if found_user != None and found_user.state == 'MT' %} selected {% endif %}>MT</option>
+                <option {% if found_user != None and found_user.state == 'NE' %} selected {% endif %}>NE</option>
+                <option {% if found_user != None and found_user.state == 'NV' %} selected {% endif %}>NV</option>
+                <option {% if found_user != None and found_user.state == 'NH' %} selected {% endif %}>NH</option>
+                <option {% if found_user != None and found_user.state == 'NJ' %} selected {% endif %}>NJ</option>
+                <option {% if found_user != None and found_user.state == 'NM' %} selected {% endif %}>NM</option>
+                <option {% if found_user != None and found_user.state == 'NY' %} selected {% endif %}>NY</option>
+                <option {% if found_user != None and found_user.state == 'NC' %} selected {% endif %}>NC</option>
+                <option {% if found_user != None and found_user.state == 'ND' %} selected {% endif %}>ND</option>
+                <option {% if found_user != None and found_user.state == 'OH' %} selected {% endif %}>OH</option>
+                <option {% if found_user != None and found_user.state == 'OK' %} selected {% endif %}>OK</option>
+                <option {% if found_user != None and found_user.state == 'OR' %} selected {% endif %}>OR</option>
+                <option {% if found_user != None and found_user.state == 'PA' %} selected {% endif %}>PA</option>
+                <option {% if found_user != None and found_user.state == 'RI' %} selected {% endif %}>RI</option>
+                <option {% if found_user != None and found_user.state == 'SC' %} selected {% endif %}>SC</option>
+                <option {% if found_user != None and found_user.state == 'SD' %} selected {% endif %}>SD</option>
+                <option {% if found_user != None and found_user.state == 'TN' %} selected {% endif %}>TN</option>
+                <option {% if found_user != None and found_user.state == 'TX' %} selected {% endif %}>TX</option>
+                <option {% if found_user != None and found_user.state == 'UT' %} selected {% endif %}>UT</option>
+                <option {% if found_user != None and found_user.state == 'VT' %} selected {% endif %}>VT</option>
+                <option {% if found_user != None and found_user.state == 'VA' %} selected {% endif %}>VA</option>
+                <option {% if found_user != None and found_user.state == 'WA' %} selected {% endif %}>WA</option>
+                <option {% if found_user != None and found_user.state == 'WV' %} selected {% endif %}>WV</option>
+                <option {% if found_user != None and found_user.state == 'WI' %} selected {% endif %}>WI</option>
+                <option {% if found_user != None and found_user.state == 'WY' %} selected {% endif %}>WY</option>
+            </select>
+        </div>
+        <ul>
+            {% for error in update_form.state.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="Inputzip1">Zip Code</label>
+            <input type="text" name="zip_code" class="form-control" id="Inputzip1" aria-describedby="zipHelp" {% if found_user != None %}placeholder="{{ found_user.zip }}"{% else %}placeholder="92805"{% endif %}>
+            <small id="zipHelp" class="form-text text-muted">Your zip will not be shared.</small>
+        </div>
+        <ul>
+            {% for error in update_form.zip_code.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" id="country" name="country">
+                <option {% if found_user != None and found_user.country == 'Afghanistan' %} selected {% endif %}>Afghanistan</option>
+                <option {% if found_user != None and found_user.country == 'Albania' %} selected {% endif %}>Albania</option>
+                <option {% if found_user != None and found_user.country == 'Algeria' %} selected {% endif %}>Algeria</option>
+                <option {% if found_user != None and found_user.country == 'Andorra' %} selected {% endif %}>Andorra</option>
+                <option {% if found_user != None and found_user.country == 'Angola' %} selected {% endif %}>Angola</option>
+                <option {% if found_user != None and found_user.country == 'Antigua &amp;amp; Barbuda' %} selected {% endif %}>Antigua &amp;amp; Barbuda</option>
+                <option {% if found_user != None and found_user.country == 'Argentina' %} selected {% endif %}>Argentina</option>
+                <option {% if found_user != None and found_user.country == 'Armenia' %} selected {% endif %}>Armenia</option>
+                <option {% if found_user != None and found_user.country == 'Australia' %} selected {% endif %}>Australia</option>
+                <option {% if found_user != None and found_user.country == 'Austria' %} selected {% endif %}>Austria</option>
+                <option {% if found_user != None and found_user.country == 'Azerbaijan' %} selected {% endif %}>Azerbaijan</option>
+                <option {% if found_user != None and found_user.country == 'Bahamas' %} selected {% endif %}>Bahamas</option>
+                <option {% if found_user != None and found_user.country == 'Bahrain' %} selected {% endif %}>Bahrain</option>
+                <option {% if found_user != None and found_user.country == 'Bangladesh' %} selected {% endif %}>Bangladesh</option>
+                <option {% if found_user != None and found_user.country == 'Barbados' %} selected {% endif %}>Barbados</option>
+                <option {% if found_user != None and found_user.country == 'Belarus' %} selected {% endif %}>Belarus</option>
+                <option {% if found_user != None and found_user.country == 'Belgium' %} selected {% endif %}>Belgium</option>
+                <option {% if found_user != None and found_user.country == 'Belize' %} selected {% endif %}>Belize</option>
+                <option {% if found_user != None and found_user.country == 'Benin' %} selected {% endif %}>Benin</option>
+                <option {% if found_user != None and found_user.country == 'Bhutan' %} selected {% endif %}>Bhutan</option>
+                <option {% if found_user != None and found_user.country == 'Bolivia' %} selected {% endif %}>Bolivia</option>
+                <option {% if found_user != None and found_user.country == 'Bosnia Herzegovina' %} selected {% endif %}>Bosnia Herzegovina</option>
+                <option {% if found_user != None and found_user.country == 'Botswana' %} selected {% endif %}>Botswana</option>
+                <option {% if found_user != None and found_user.country == 'Brazil' %} selected {% endif %}>Brazil</option>
+                <option {% if found_user != None and found_user.country == 'Brunei' %} selected {% endif %}>Brunei</option>
+                <option {% if found_user != None and found_user.country == 'Bulgaria' %} selected {% endif %}>Bulgaria</option>
+                <option {% if found_user != None and found_user.country == 'Burkina Faso' %} selected {% endif %}>Burkina Faso</option>
+                <option {% if found_user != None and found_user.country == 'Burundi' %} selected {% endif %}>Burundi</option>
+                <option {% if found_user != None and found_user.country == "Cote d'Ivoire" %} selected {% endif %}>Cote d'Ivoire</option>
+                <option {% if found_user != None and found_user.country == 'Cabo Verde' %} selected {% endif %}>Cabo Verde</option>
+                <option {% if found_user != None and found_user.country == 'Cambodia' %} selected {% endif %}>Cambodia</option>
+                <option {% if found_user != None and found_user.country == 'Cameroon' %} selected {% endif %}>Cameroon</option>
+                <option {% if found_user != None and found_user.country == 'Canada' %} selected {% endif %}>Canada</option>
+                <option {% if found_user != None and found_user.country == 'Central African Republic' %} selected {% endif %}>Central African Republic</option>
+                <option {% if found_user != None and found_user.country == 'Chad' %} selected {% endif %}>Chad</option>
+                <option {% if found_user != None and found_user.country == 'Chile' %} selected {% endif %}>Chile</option>
+                <option {% if found_user != None and found_user.country == 'China' %} selected {% endif %}>China</option>
+                <option {% if found_user != None and found_user.country == 'Colombia' %} selected {% endif %}>Colombia</option>
+                <option {% if found_user != None and found_user.country == 'Comoros' %} selected {% endif %}>Comoros</option>
+                <option {% if found_user != None and found_user.country == 'Costa Rica' %} selected {% endif %}>Costa Rica</option>
+                <option {% if found_user != None and found_user.country == 'Croatia' %} selected {% endif %}>Croatia</option>
+                <option {% if found_user != None and found_user.country == 'Cuba' %} selected {% endif %}>Cuba</option>
+                <option {% if found_user != None and found_user.country == 'Cyprus' %} selected {% endif %}>Cyprus</option>
+                <option {% if found_user != None and found_user.country == 'Czech Republic' %} selected {% endif %}>Czech Republic</option>
+                <option {% if found_user != None and found_user.country == 'Democratic Republic of Congo' %} selected {% endif %}>Democratic Republic of Congo</option>
+                <option {% if found_user != None and found_user.country == 'Denmark' %} selected {% endif %}>Denmark</option>
+                <option {% if found_user != None and found_user.country == 'Djibouti' %} selected {% endif %}>Djibouti</option>
+                <option {% if found_user != None and found_user.country == 'Dominica' %} selected {% endif %}>Dominica</option>
+                <option {% if found_user != None and found_user.country == 'Dominican Republic' %} selected {% endif %}>Dominican Republic</option>
+                <option {% if found_user != None and found_user.country == 'East Timor' %} selected {% endif %}>East Timor</option>
+                <option {% if found_user != None and found_user.country == 'Ecuador' %} selected {% endif %}>Ecuador</option>
+                <option {% if found_user != None and found_user.country == 'Egypt' %} selected {% endif %}>Egypt</option>
+                <option {% if found_user != None and found_user.country == 'El Salvador' %} selected {% endif %}>El Salvador</option>
+                <option {% if found_user != None and found_user.country == 'Equatorial Guinea' %} selected {% endif %}>Equatorial Guinea</option>
+                <option {% if found_user != None and found_user.country == 'Eritrea' %} selected {% endif %}>Eritrea</option>
+                <option {% if found_user != None and found_user.country == 'Estonia' %} selected {% endif %}>Estonia</option>
+                <option {% if found_user != None and found_user.country == 'Eswatini (fmr. Swaziland)' %} selected {% endif %}>Eswatini (fmr. Swaziland)</option>
+                <option {% if found_user != None and found_user.country == 'Ethiopia' %} selected {% endif %}>Ethiopia</option>
+                <option {% if found_user != None and found_user.country == 'Fiji' %} selected {% endif %}>Fiji</option>
+                <option {% if found_user != None and found_user.country == 'Finland' %} selected {% endif %}>Finland</option>
+                <option {% if found_user != None and found_user.country == 'France' %} selected {% endif %}>France</option>
+                <option {% if found_user != None and found_user.country == 'Gabon' %} selected {% endif %}>Gabon</option>
+                <option {% if found_user != None and found_user.country == 'Gambia' %} selected {% endif %}>Gambia</option>
+                <option {% if found_user != None and found_user.country == 'Georgia' %} selected {% endif %}>Georgia</option>
+                <option {% if found_user != None and found_user.country == 'Germany' %} selected {% endif %}>Germany</option>
+                <option {% if found_user != None and found_user.country == 'Ghana' %} selected {% endif %}>Ghana</option>
+                <option {% if found_user != None and found_user.country == 'Greece' %} selected {% endif %}>Greece</option>
+                <option {% if found_user != None and found_user.country == 'Grenada' %} selected {% endif %}>Grenada</option>
+                <option {% if found_user != None and found_user.country == 'Guatemala' %} selected {% endif %}>Guatemala</option>
+                <option {% if found_user != None and found_user.country == 'Guinea' %} selected {% endif %}>Guinea</option>
+                <option {% if found_user != None and found_user.country == 'Guinea-Bissau' %} selected {% endif %}>Guinea-Bissau</option>
+                <option {% if found_user != None and found_user.country == 'Guyana' %} selected {% endif %}>Guyana</option>
+                <option {% if found_user != None and found_user.country == 'Haiti' %} selected {% endif %}>Haiti</option>
+                <option {% if found_user != None and found_user.country == 'Holy See' %} selected {% endif %}>Holy See</option>
+                <option {% if found_user != None and found_user.country == 'Honduras' %} selected {% endif %}>Honduras</option>
+                <option {% if found_user != None and found_user.country == 'Hungary' %} selected {% endif %}>Hungary</option>
+                <option {% if found_user != None and found_user.country == 'Iceland' %} selected {% endif %}>Iceland</option>
+                <option {% if found_user != None and found_user.country == 'India' %} selected {% endif %}>India</option>
+                <option {% if found_user != None and found_user.country == 'Indonesia' %} selected {% endif %}>Indonesia</option>
+                <option {% if found_user != None and found_user.country == 'Iran' %} selected {% endif %}>Iran</option>
+                <option {% if found_user != None and found_user.country == 'Iraq' %} selected {% endif %}>Iraq</option>
+                <option {% if found_user != None and found_user.country == 'Ireland' %} selected {% endif %}>Ireland</option>
+                <option {% if found_user != None and found_user.country == 'Israel' %} selected {% endif %}>Israel</option>
+                <option {% if found_user != None and found_user.country == 'Italy' %} selected {% endif %}>Italy</option>
+                <option {% if found_user != None and found_user.country == 'Ivory Coast' %} selected {% endif %}>Ivory Coast</option>
+                <option {% if found_user != None and found_user.country == 'Jamaica' %} selected {% endif %}>Jamaica</option>
+                <option {% if found_user != None and found_user.country == 'Japan' %} selected {% endif %}>Japan</option>
+                <option {% if found_user != None and found_user.country == 'Jordan' %} selected {% endif %}>Jordan</option>
+                <option {% if found_user != None and found_user.country == 'Kazakhstan' %} selected {% endif %}>Kazakhstan</option>
+                <option {% if found_user != None and found_user.country == 'Kenya' %} selected {% endif %}>Kenya</option>
+                <option {% if found_user != None and found_user.country == 'Kiribati' %} selected {% endif %}>Kiribati</option>
+                <option {% if found_user != None and found_user.country == 'North Korea' %} selected {% endif %}>North Korea</option>
+                <option {% if found_user != None and found_user.country == 'South Korea' %} selected {% endif %}>South Korea</option>
+                <option {% if found_user != None and found_user.country == 'Kosovo' %} selected {% endif %}>Kosovo</option>
+                <option {% if found_user != None and found_user.country == 'Kuwait' %} selected {% endif %}>Kuwait</option>
+                <option {% if found_user != None and found_user.country == 'Kyrgyzstan' %} selected {% endif %}>Kyrgyzstan</option>
+                <option {% if found_user != None and found_user.country == 'Laos' %} selected {% endif %}>Laos</option>
+                <option {% if found_user != None and found_user.country == 'Latvia' %} selected {% endif %}>Latvia</option>
+                <option {% if found_user != None and found_user.country == 'Lebanon' %} selected {% endif %}>Lebanon</option>
+                <option {% if found_user != None and found_user.country == 'Lesotho' %} selected {% endif %}>Lesotho</option>
+                <option {% if found_user != None and found_user.country == 'Liberia' %} selected {% endif %}>Liberia</option>
+                <option {% if found_user != None and found_user.country == 'Libya' %} selected {% endif %}>Libya</option>
+                <option {% if found_user != None and found_user.country == 'Liechtenstein' %} selected {% endif %}>Liechtenstein</option>
+                <option {% if found_user != None and found_user.country == 'Lithuania' %} selected {% endif %}>Lithuania</option>
+                <option {% if found_user != None and found_user.country == 'Luxembourg' %} selected {% endif %}>Luxembourg</option>
+                <option {% if found_user != None and found_user.country == 'Macedonia' %} selected {% endif %}>Macedonia</option>
+                <option {% if found_user != None and found_user.country == 'Madagascar' %} selected {% endif %}>Madagascar</option>
+                <option {% if found_user != None and found_user.country == 'Malawi' %} selected {% endif %}>Malawi</option>
+                <option {% if found_user != None and found_user.country == 'Malaysia' %} selected {% endif %}>Malaysia</option>
+                <option {% if found_user != None and found_user.country == 'Maldives' %} selected {% endif %}>Maldives</option>
+                <option {% if found_user != None and found_user.country == 'Mali' %} selected {% endif %}>Mali</option>
+                <option {% if found_user != None and found_user.country == 'Malta' %} selected {% endif %}>Malta</option>
+                <option {% if found_user != None and found_user.country == 'Marshall Islands' %} selected {% endif %}>Marshall Islands</option>
+                <option {% if found_user != None and found_user.country == 'Mauritania' %} selected {% endif %}>Mauritania</option>
+                <option {% if found_user != None and found_user.country == 'Mauritius' %} selected {% endif %}>Mauritius</option>
+                <option {% if found_user != None and found_user.country == 'Mexico' %} selected {% endif %}>Mexico</option>
+                <option {% if found_user != None and found_user.country == 'Micronesia' %} selected {% endif %}>Micronesia</option>
+                <option {% if found_user != None and found_user.country == 'Moldova' %} selected {% endif %}>Moldova</option>
+                <option {% if found_user != None and found_user.country == 'Monaco' %} selected {% endif %}>Monaco</option>
+                <option {% if found_user != None and found_user.country == 'Mongolia' %} selected {% endif %}>Mongolia</option>
+                <option {% if found_user != None and found_user.country == 'Montenegro' %} selected {% endif %}>Montenegro</option>
+                <option {% if found_user != None and found_user.country == 'Morocco' %} selected {% endif %}>Morocco</option>
+                <option {% if found_user != None and found_user.country == 'Mozambique' %} selected {% endif %}>Mozambique</option>
+                <option {% if found_user != None and found_user.country == 'Myanmar' %} selected {% endif %}>Myanmar</option>
+                <option {% if found_user != None and found_user.country == 'Namibia' %} selected {% endif %}>Namibia</option>
+                <option {% if found_user != None and found_user.country == 'Nauru' %} selected {% endif %}>Nauru</option>
+                <option {% if found_user != None and found_user.country == 'Nepal' %} selected {% endif %}>Nepal</option>
+                <option {% if found_user != None and found_user.country == 'Netherlands' %} selected {% endif %}>Netherlands</option>
+                <option {% if found_user != None and found_user.country == 'New Zealand' %} selected {% endif %}>New Zealand</option>
+                <option {% if found_user != None and found_user.country == 'Nicaragua' %} selected {% endif %}>Nicaragua</option>
+                <option {% if found_user != None and found_user.country == 'Niger' %} selected {% endif %}>Niger</option>
+                <option {% if found_user != None and found_user.country == 'Nigeria' %} selected {% endif %}>Nigeria</option>
+                <option {% if found_user != None and found_user.country == 'Norway' %} selected {% endif %}>Norway</option>
+                <option {% if found_user != None and found_user.country == 'Oman' %} selected {% endif %}>Oman</option>
+                <option {% if found_user != None and found_user.country == 'Pakistan' %} selected {% endif %}>Pakistan</option>
+                <option {% if found_user != None and found_user.country == 'Palau' %} selected {% endif %}>Palau</option>
+                <option {% if found_user != None and found_user.country == 'Panama' %} selected {% endif %}>Panama</option>
+                <option {% if found_user != None and found_user.country == 'Papua New Guinea' %} selected {% endif %}>Papua New Guinea</option>
+                <option {% if found_user != None and found_user.country == 'Paraguay' %} selected {% endif %}>Paraguay</option>
+                <option {% if found_user != None and found_user.country == 'Peru' %} selected {% endif %}>Peru</option>
+                <option {% if found_user != None and found_user.country == 'Philippines' %} selected {% endif %}>Philippines</option>
+                <option {% if found_user != None and found_user.country == 'Poland' %} selected {% endif %}>Poland</option>
+                <option {% if found_user != None and found_user.country == 'Portugal' %} selected {% endif %}>Portugal</option>
+                <option {% if found_user != None and found_user.country == 'Qatar' %} selected {% endif %}>Qatar</option>
+                <option {% if found_user != None and found_user.country == 'Romania' %} selected {% endif %}>Romania</option>
+                <option {% if found_user != None and found_user.country == 'Russian Federation' %} selected {% endif %}>Russian Federation</option>
+                <option {% if found_user != None and found_user.country == 'Rwanda' %} selected {% endif %}>Rwanda</option>
+                <option {% if found_user != None and found_user.country == 'St Kitts &amp;amp; Nevis' %} selected {% endif %}>St Kitts &amp;amp; Nevis</option>
+                <option {% if found_user != None and found_user.country == 'St Lucia' %} selected {% endif %}>St Lucia</option>
+                <option {% if found_user != None and found_user.country == 'Saint Vincent &amp;amp; the Grenadines' %} selected {% endif %}>Saint Vincent &amp;amp; the Grenadines</option>
+                <option {% if found_user != None and found_user.country == 'Samoa' %} selected {% endif %}>Samoa</option>
+                <option {% if found_user != None and found_user.country == 'San Marino' %} selected {% endif %}>San Marino</option>
+                <option {% if found_user != None and found_user.country == 'Sao Tome &amp;amp; Principe' %} selected {% endif %}>Sao Tome &amp;amp; Principe</option>
+                <option {% if found_user != None and found_user.country == 'Saudi Arabia' %} selected {% endif %}>Saudi Arabia</option>
+                <option {% if found_user != None and found_user.country == 'Senegal' %} selected {% endif %}>Senegal</option>
+                <option {% if found_user != None and found_user.country == 'Serbia' %} selected {% endif %}>Serbia</option>
+                <option {% if found_user != None and found_user.country == 'Seychelles' %} selected {% endif %}>Seychelles</option>
+                <option {% if found_user != None and found_user.country == 'Sierra Leone' %} selected {% endif %}>Sierra Leone</option>
+                <option {% if found_user != None and found_user.country == 'Singapore' %} selected {% endif %}>Singapore</option>
+                <option {% if found_user != None and found_user.country == 'Slovakia' %} selected {% endif %}>Slovakia</option>
+                <option {% if found_user != None and found_user.country == 'Slovenia' %} selected {% endif %}>Slovenia</option>
+                <option {% if found_user != None and found_user.country == 'Solomon Islands' %} selected {% endif %}>Solomon Islands</option>
+                <option {% if found_user != None and found_user.country == 'Somalia' %} selected {% endif %}>Somalia</option>
+                <option {% if found_user != None and found_user.country == 'South Africa' %} selected {% endif %}>South Africa</option>
+                <option {% if found_user != None and found_user.country == 'South Sudan' %} selected {% endif %}>South Sudan</option>
+                <option {% if found_user != None and found_user.country == 'Spain' %} selected {% endif %}>Spain</option>
+                <option {% if found_user != None and found_user.country == 'Sri Lanka' %} selected {% endif %}>Sri Lanka</option>
+                <option {% if found_user != None and found_user.country == 'Sudan' %} selected {% endif %}>Sudan</option>
+                <option {% if found_user != None and found_user.country == 'Suriname' %} selected {% endif %}>Suriname</option>
+                <option {% if found_user != None and found_user.country == 'Swaziland' %} selected {% endif %}>Swaziland</option>
+                <option {% if found_user != None and found_user.country == 'Sweden' %} selected {% endif %}>Sweden</option>
+                <option {% if found_user != None and found_user.country == 'Switzerland' %} selected {% endif %}>Switzerland</option>
+                <option {% if found_user != None and found_user.country == 'Syria' %} selected {% endif %}>Syria</option>
+                <option {% if found_user != None and found_user.country == 'Taiwan' %} selected {% endif %}>Taiwan</option>
+                <option {% if found_user != None and found_user.country == 'Tajikistan' %} selected {% endif %}>Tajikistan</option>
+                <option {% if found_user != None and found_user.country == 'Tanzania' %} selected {% endif %}>Tanzania</option>
+                <option {% if found_user != None and found_user.country == 'Thailand' %} selected {% endif %}>Thailand</option>
+                <option {% if found_user != None and found_user.country == 'Togo' %} selected {% endif %}>Togo</option>
+                <option {% if found_user != None and found_user.country == 'Tonga' %} selected {% endif %}>Tonga</option>
+                <option {% if found_user != None and found_user.country == 'Trinidad &amp;amp; Tobago' %} selected {% endif %}>Trinidad &amp;amp; Tobago</option>
+                <option {% if found_user != None and found_user.country == 'Tunisia' %} selected {% endif %}>Tunisia</option>
+                <option {% if found_user != None and found_user.country == 'Turkey' %} selected {% endif %}>Turkey</option>
+                <option {% if found_user != None and found_user.country == 'Turkmenistan' %} selected {% endif %}>Turkmenistan</option>
+                <option {% if found_user != None and found_user.country == 'Tuvalu' %} selected {% endif %}>Tuvalu</option>
+                <option {% if found_user != None and found_user.country == 'Uganda' %} selected {% endif %}>Uganda</option>
+                <option {% if found_user != None and found_user.country == 'Ukraine' %} selected {% endif %}>Ukraine</option>
+                <option {% if found_user != None and found_user.country == 'United Arab Emirates' %} selected {% endif %}>United Arab Emirates</option>
+                <option {% if found_user != None and found_user.country == 'United Kingdom' %} selected {% endif %}>United Kingdom</option>
+                <option {% if found_user != None and found_user.country == 'United States' %} selected {% endif %}>United States</option>
+                <option {% if found_user != None and found_user.country == 'Uruguay' %} selected {% endif %}>Uruguay</option>
+                <option {% if found_user != None and found_user.country == 'Uzbekistan' %} selected {% endif %}>Uzbekistan</option>
+                <option {% if found_user != None and found_user.country == 'Vanuatu' %} selected {% endif %}>Vanuatu</option>
+                <option {% if found_user != None and found_user.country == 'Vatican City' %} selected {% endif %}>Vatican City</option>
+                <option {% if found_user != None and found_user.country == 'Venezuela' %} selected {% endif %}>Venezuela</option>
+                <option {% if found_user != None and found_user.country == 'Vietnam' %} selected {% endif %}>Vietnam</option>
+                <option {% if found_user != None and found_user.country == 'Yemen' %} selected {% endif %}>Yemen</option>
+                <option {% if found_user != None and found_user.country == 'Zambia' %} selected {% endif %}>Zambia</option>
+                <option {% if found_user != None and found_user.country == 'Zimbabwe' %} selected {% endif %}>Zimbabwe</option>
+            </select>
+        </div>
+        <ul>
+            {% for error in update_form.country.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="cc_type">Credit Card Type</label>
+            <select class="form-control" id="cc_type" name="cc_type">
+                <option {% if found_user != None and found_user.cc_type == 'VISA' %} selected {% endif %}>VISA</option>
+                <option {% if found_user != None and found_user.cc_type == 'MASTER CARD' %} selected {% endif %}>MASTER CARD</option>
+                <option {% if found_user != None and found_user.cc_type == 'AMEX' %} selected {% endif %}>AMEX</option>
+                <option {% if found_user != None and found_user.cc_type == 'DISCOVER' %} selected {% endif %}>DISCOVER</option>
+                <option {% if found_user != None and found_user.cc_type == 'PREPAID' %} selected {% endif %}>PREPAID</option>
+            </select>
+        </div>
+        <ul>
+            {% for error in update_form.cc_type.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="cc_num">Credit Card Number</label>
+            <input class="form-control" type="text" id="cc_num" name="cc_num" {% if found_user != None %}placeholder="****-****-****-{{ found_user.cc_num[15:20] }}"{% else %}placeholder="####-####-####-####"{% endif %}/>
+        </div>
+        <ul>
+            {% for error in update_form.cc_num.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="sec_num">Security Number</label>
+            <input class="form-control" type="text" id="sec_num" name="sec_num" {% if found_user != None %} {% set size = found_user.sec_num | upper | count %} placeholder="{{ '%s' | format('*' * size)}}"{% else %}placeholder="###"{% endif %}/>
+        </div>
+        <ul>
+            {% for error in update_form.sec_num.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <button type="submit" class="btn btn-primary">Update Your Information</button>
+    </form>
+    
+    <div class="jumbotron mt-5">
+	<h1>Cart Contents</h1>
+	<h2>Please review your cart one last time...</h2>
+     </div>
+     
+     {% for book in booksInCart %}
+    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+	<ul class="list-group-item list-group">
+		<li class="list-group-item">
+			{{ book.title }}
+		</li>
+		<li class="list-group-item">
+			Quantity: {{ book.quantity }}
+		</li>
+		<li class="list-group-item">
+			Price: ${{ "%.2f"|format(book.price) }}
+		</li>
+		<li class="list-group-item">
+			Total Before Tax: ${{ "%.2f"|format(book.total_price_before_tax) }}
+		</li>
+		<li class="list-group-item">
+			Tax: ${{ "%.2f"|format(book.tax) }}
+		</li>
+		<li class="list-group-item">
+			Total After Tax: ${{ "%.2f"|format(book.total_price_after_tax) }}
+		</li>		
+	</ul>
+{% endfor %}
+<a class="btn btn-success" href="{{ url_for('confirmation') }}">Place Order</a>
+{% endblock %}

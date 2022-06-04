@@ -1,0 +1,94 @@
+{% extends "page_base.html" %}
+{% block scripts %}
+    <script type="text/JavaScript">
+        function incrementQuantity(elementId) {
+            q = document.getElementById(elementId)
+            q.value++;
+        }
+
+        function decrementQuantity(elementId) {
+            q = document.getElementById(elementId)
+            if(q.value > 0)
+                q.value--;
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron mt-4">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">Your Shopping Cart</h1>
+        <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">Please review all the items in your shopping cart.</p>
+        <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+        <h2>Order Summary</h2>
+        <p>Number of Items: {{ summary_values['total_books'] }}</p>
+        <p>Grand Total (Before Tax): ${{ "%.2f"|format(summary_values['cumulative_bf_tax']) }}</p>
+        <p>Total Tax: + ${{ "%.2f"|format(summary_values['cumulative_tax']) }}</p>
+        <p><strong>Grand Total (After Tax): ${{ "%.2f"|format(summary_values['cumulative_after_tax']) }}</strong></p>
+    </div><!-- end jumbotron -->
+
+<h3 class="d-block mb-3">Items in Cart</h3>
+        <form action="{{ url_for('manageCart') }}" method="post">
+            {% for book in booksInCart %}
+
+                <div class="row pb-5">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img class="card-img-top img-fluid" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <ul class="list-group-item list-group">
+                        <li class="list-group-item border-0">
+                            <a href="{{ url_for('getbook', book_id=book.book_id) }}"><h4>{{ book.title }}</h4></a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <div class="row justify-content-start">
+                                <div class="col-2">
+                                    Quantity:
+                                </div>
+                                <div class="col-1">
+                                    <button class="btn btn-default" type="button" onClick="decrementQuantity('{{ book.book_id }}')"><i class="fas fa-minus"></i></button>
+                                </div>
+                                <div class="col-1">
+                                    <input id="{{ book.book_id }}" name="{{ book.book_id }}" class="form-control-plaintext" type="text" readonly value="{{ book.quantity }}"/>
+                                </div>
+                                <div class="col-1">
+                                    <button class="btn btn-default" type="button" onClick="incrementQuantity('{{ book.book_id }}')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0">
+                            Price: ${{ "%.2f"|format(book.price) }}
+                        </li>
+                        <li class="list-group-item border-0">
+                            Total Before Tax: ${{ "%.2f"|format(book.total_price_before_tax) }}
+                        </li>
+                        <li class="list-group-item border-0">
+                            Tax: ${{ "%.2f"|format(book.tax) }}
+                        </li>
+                        <li class="list-group-item border-0">
+                            Total After Tax: ${{ "%.2f"|format(book.total_price_after_tax) }}
+                        </li>
+                    </ul>
+                </div>
+
+                </div><!--end row-->
+            {% endfor %}
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center mb-3">
+                <button class="btn btn-outline-dark btn-block" type="submit">Update Cart</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <a class="btn btn-info btn-block" href="{{ url_for('checkout') }}">Proceed to Checkout</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block custom_script %}
+{% endblock %}

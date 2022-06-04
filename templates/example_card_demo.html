@@ -1,0 +1,68 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <h1>Example Card Demo Page</h1>
+    <h2>All Books Listed:</h2>
+    <div class="row">
+        {% for book in all_books %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text"><strong>Book Status: </strong>{{ book.status_desc }}</p>
+                        <p class="card-text"><strong>${{ book.price }}</strong></p>
+                        <p class="card-text"><small class="text-muted">Name of image displayed: {{ book.path }}</small></p>
+                        <a class="btn btn-primary" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>All Editor's Choice Books:</h2>
+    <div class="row">
+        {% for book in editors_books %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Book Status: </strong>{{ book.status_desc }}</p>
+                        <p class="card-text"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text"><strong>${{ book.price }}</strong></p>
+                        <p class="card-text"><small class="text-muted">Name of image displayed: {{ book.path }}</small></p>
+                        <a class="btn btn-primary" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>All Sci-Fi Books:</h2>
+    <div class="row">
+        {% for book in scifi_books %}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book.title }}</h5>
+                        <p class="card-text"><strong>Genre: </strong>{{ book.genre_desc }}</p>
+                        <p class="card-text"><strong>Description: </strong>{{ book.description }}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</p>
+                        <p class="card-text"><strong>Book Status: </strong>{{ book.status_desc }}</p>
+                        <p class="card-text"><strong>${{ book.price }}</strong></p>
+                        <p class="card-text"><small class="text-muted">Name of image displayed: {{ book.path }}</small></p>
+                        <a class="btn btn-primary" href="{{ url_for('getbook', book_id=book.book_id) }}">View</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

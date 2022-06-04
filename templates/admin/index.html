@@ -1,0 +1,19 @@
+{% extends 'admin/master.html' %}
+
+{% block head_css %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='admin_global_custom_style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Admin Dashboard Home</h1>
+        <p class="lead">The admin sub-system of the site offers full data management of the site database.</p>
+        <hr class="my-4">
+        <p>Data can be managed by the site admin across all database tables in the database.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Return to Main Site</a>
+        </p>
+    </div>
+
+{% endblock %}

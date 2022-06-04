@@ -1,0 +1,62 @@
+{% extends "page_base.html" %}
+{% block scripts %}
+<script type="text/JavaScript">
+	function incrementQuantity(elementId) {
+		q = document.getElementById(elementId)
+		q.value++;
+	}
+	
+	function decrementQuantity(elementId) {
+		q = document.getElementById(elementId)
+		if(q.value > 0)
+			q.value--;
+	}
+</script>
+{% endblock %}
+{% block body %}
+<div class="jumbotron mt-5">
+	<h1>Lets take a look at what's in your cart...</h1>
+</div>
+<ul class="list-group">
+<form action="{{ url_for('manageCart') }}" method="post">
+{% for book in booksInCart %}
+    <img class="card-img-top" src="{{ url_for('static', filename=book.path) }}" alt="Card image cap">
+	<ul class="list-group-item list-group">
+		<li class="list-group-item">
+			{{ book.title }}
+		</li>
+		<li class="list-group-item">
+			<div class="row justify-content-start">
+			<div class="col-2">
+			Quantity: 
+			<button class="btn btn-danger" type="button" onClick="decrementQuantity('{{ book.book_id }}')">-</button>
+			</div>
+			<div class="col-1">
+			<input id="{{ book.book_id }}" name="{{ book.book_id }}" class="form-control-plaintext" type="text" readonly value="{{ book.quantity }}"/>
+			</div>
+			<div class="col-1">
+			<button class="btn btn-success" type="button" onClick="incrementQuantity('{{ book.book_id }}')">+</button>
+			</div>
+			</div>
+		</li>
+		<li class="list-group-item">
+			Price: ${{ "%.2f"|format(book.price) }}
+		</li>
+		<li class="list-group-item">
+			Total Before Tax: ${{ "%.2f"|format(book.total_price_before_tax) }}
+		</li>
+		<li class="list-group-item">
+			Tax: ${{ "%.2f"|format(book.tax) }}
+		</li>
+		<li class="list-group-item">
+			Total After Tax: ${{ "%.2f"|format(book.total_price_after_tax) }}
+		</li>		
+	</ul>
+{% endfor %}
+</ul>
+<button class="btn btn-primary" type="submit">update</button>
+</form>
+<a class="btn btn-success" href="{{ url_for('checkout') }}">Proceed to Checkout</a>
+
+
+{% endblock %}

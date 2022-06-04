@@ -1,0 +1,35 @@
+
+.book_name {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.book_price {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 9px;
+    clear: left;
+}
+
+.book_description {
+    padding-left: 0px;
+}
+
+.row-underline {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #D1D4D7;
+    margin: 0px 0px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.p_specification {
+    font-weight: 500;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}

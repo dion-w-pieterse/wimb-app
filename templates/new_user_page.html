@@ -1,0 +1,11 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s"><span style="font-size: 1.5em; color: Green; padding-right: 0.2em;"><i class="fas fa-user-check"></i></span>Successful Registration</h1>
+        <p class="lead">Welcome {{ current_user.username }}.</p>
+        <hr class="my-4">
+        <p>You are automatically logged in, remember me is deactivated. Please browse our wonderful selection of books.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Return to Home</a>
+    </div>
+{% endblock %}

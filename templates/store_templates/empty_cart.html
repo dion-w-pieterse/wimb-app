@@ -1,0 +1,11 @@
+{% extends "page_base.html" %}
+{% block body %}
+
+    <div class="jumbotron mt-4">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__bounce" data-delay=".2s"><i class="fas fa-cart-arrow-down"></i> Empty Cart</h1>
+        <p class="lead">Oh no! It looks like your cart is currently empty.</p>
+        <hr class="my-4">
+        <p>Please continue shopping.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Back to Bookstore</a>
+    </div>
+{% endblock %}

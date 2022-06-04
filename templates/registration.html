@@ -1,0 +1,54 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <div class="jumbotron mt-4">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">Registration Form</h1>
+        <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">Please fill in your information to register your account with us.</p>
+        <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+    </div>
+
+    <form action="/register" method="POST">
+        {{ reg_form.csrf_token }}
+        <div class="form-group">
+            <label for="InputEmail1">Email address</label>
+            <input type="text" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="johndoe@gmail.com">
+            <small id="emailHelp" class="form-text text-muted">Your email is never shared.</small>
+        </div>
+        <ul>
+            {% for error in reg_form.email.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="usernameInput1">Username</label>
+            <input type="text" name="username" class="form-control" id="usernameInput1" aria-describedby="usernameHelp" placeholder="johndoe">
+            <small id="usernameHelp" class="form-text text-muted">Keep your username easy to remember.</small>
+        </div>
+        <ul>
+            {% for error in reg_form.username.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="InputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="InputPassword1" placeholder="Password">
+        </div>
+        <ul>
+            {% for error in reg_form.password.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="InputPassword2">Confirm Password</label>
+            <input type="password" name="check_password" class="form-control" id="InputPassword2" placeholder="Re-Type Your Password">
+        </div>
+        <ul>
+            {% for error in reg_form.check_password.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+
+{% endblock %}

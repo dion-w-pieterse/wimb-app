@@ -1,0 +1,11 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s"><span style="font-size: 1.5em; color: Tomato; padding-right: 0.2em;"><i class="fas fa-skull-crossbones"></i></span>Error: Username Does Not Exist</h1>
+        <p class="lead">The username does not exist.</p>
+        <hr class="my-4">
+        <p>Please return to login page:</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Return to Login</a>
+    </div>
+{% endblock %}

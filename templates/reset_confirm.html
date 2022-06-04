@@ -1,0 +1,12 @@
+{% extends "page_base.html" %}
+{% block body %}
+
+    <div class="jumbotron mt-4">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">Your Credentials Have Been Updated.</h1>
+        <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">You have successfully changed your username and password.</p>
+        <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+        <p>Please continue to browse through all our books and continue shopping.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Return Home</a>
+    </div>
+
+{% endblock %}

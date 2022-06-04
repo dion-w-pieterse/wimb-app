@@ -1,0 +1,52 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+    <div class="jumbotron mt-4">
+        <h1 class="display-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".05s">Login Form</h1>
+        <p class="lead os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".1s">Please enter your username and password to access your site account.</p>
+        <hr class="my-4 os-animation" data-animation="animate__animated animate__fadeIn" data-delay=".15s">
+
+    </div>
+
+    <form action="/login" method="POST">
+        {{ login_form.csrf_token }}
+        <div class="form-group">
+            <label for="inputUsername">Username</label>
+            <input type="text" name="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp" placeholder="Enter Username">
+            <small id="usernameHelp" class="form-text text-muted">Enter your account username here</small>
+        </div>
+        <ul>
+        {% for error in login_form.username.errors %}
+            <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <label for="InputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="InputPassword1" placeholder="Password">
+        </div>
+        <ul>
+            {% for error in login_form.password.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+	    {% if success != None %}
+	        <li style="color:red">The password you entered is incorrect.</li>
+	    {% endif %}
+        </ul>
+
+        <div class="form-group form-check">
+            <input type="checkbox" name="remember_me" class="form-check-input" id="rememberMeCheck1">
+            <label class="form-check-label" for="rememberMeCheck1">Remember Me</label>
+        </div>
+        <ul>
+            {% for error in login_form.remember_me.errors %}
+                <li style="color:red;">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+        <a class="forgot_pw_style ml-4" href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+    </form>
+
+
+{% endblock %}

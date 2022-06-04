@@ -1,0 +1,10 @@
+
+
+.os-animation{
+    opacity: 0;
+    margin: 0!important;
+    max-width: 100%;
+}
+.os-animation.animated {
+    opacity: 1;
+}
