@@ -34,13 +34,13 @@ Note: All usernames, passwords and database names and instances have been remove
 ### Database User Created (if you use the database provided in the repo, these users are already rows in the DB):
 
   (Note: Only regular non-admin users can be created via the registration page).
-    - Admin:
-        - ```username: admin```
-        - ```password: <password>```
+- Admin:
+    - ```username: admin```
+    - ```password: <password>```
 
-    - Regular user 1:
-        - ```username: test_person```
-        - ```password: <password>```
+- Regular user 1:
+    - ```username: test_person```
+    - ```password: <password>```
 
 ### How To Delete / Rebuild SQLAlchemy Database, and Run a Fresh Database (via console if not using the dbsetup.py script):
 
