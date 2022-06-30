@@ -11,11 +11,11 @@ IP Address
 
 - Create the sqlite3 database:
     - Navigate to the project directory.
-        - ```sqlite3 <database_name>.db```
+        - ```sqlite3 <database name>.db```
         - ```.tables```
         - ```.exit```
 - Use dbsetup.py python script:
-    - ```python dbsetup.py \-u username \-p password```
+    - ```python dbsetup.py -u <username> -p <password>```
     - NOTE: The username and password that you use in the command above will be granted the admin user role.
 
 - Now you can run the app, and login under the admin account you just setup.
