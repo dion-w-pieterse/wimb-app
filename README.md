@@ -44,24 +44,24 @@ Note: All usernames, passwords and database names and instances have been remove
 
 ### How To Delete / Rebuild SQLAlchemy Database, and Run a Fresh Database (via console if not using the dbsetup.py script):
 
-    - ```rm <database name>.db```
+- ```rm <database name>.db```
+- ```sqlite3 <database name>.db```
+- check the database is empty
     - ```sqlite3 <database name>.db```
-    - check the database is empty
-        - ```sqlite3 <database name>.db```
-        - ```.tables```
-        - ```.exit```
-    - Enter Python shell in console:
-        - ```python```
-        - >>> ```from app import db```
-        - >>> ```db.create_all()```     Note: If you need to drop the tables: db.drop_all()
-        - >>> ```exit()```
-    - Check all the tables are present via console:
-        - ```sqlite3 <database name>.db```
-        - ```.tables```
-        - (You should see all the tables created)
-        - ```.exit```
-    - Restart the app via console:
-        - ```python app.py```
+    - ```.tables```
+    - ```.exit```
+- Enter Python shell in console:
+    - ```python```
+    - >>> ```from app import db```
+    - >>> ```db.create_all()```     Note: If you need to drop the tables: db.drop_all()
+    - >>> ```exit()```
+- Check all the tables are present via console:
+    - ```sqlite3 <database name>.db```
+    - ```.tables```
+    - (You should see all the tables created)
+    - ```.exit```
+- Restart the app via console:
+    - ```python app.py```
 
 ## Summarized Software Requirements Specification
 
