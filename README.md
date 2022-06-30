@@ -119,26 +119,34 @@ This SRS assumes that:
 ## USER VIEW
 
 ## 3.1 The app shall display the home page
-**Description**
+**Description**:
 After entering the link in the browser/ clicking the link to open in the browser, a home page will be displayed.
-**Pre-condition** – User has the link to the website.
-**Post-condition** – The home page is displayed.
+**Pre-condition**: – User has the link to the website.
+**Post-condition**: – The home page is displayed.
 
 ## 3.2 The app shall display the login page
-**Description**
+**Description**:
 The user will be directed to the login page. If the user is registered with the web application user can enter the correct credentials in the spaces provided for email and password.
 
-**Pre-condition** User has valid credentials like the email and password registered with the web application.
+**Pre-condition**: User has valid credentials like the email and password registered with the web application.
 
-**Post-condition** The user is directed to the homepage if the credentials are authorized correctly and will be signed in, else the user is prompted that the entered credentials are incorrect.
+**Post-condition**: The user is directed to the homepage if the credentials are authorized correctly and will be signed in, else the user is prompted that the entered credentials are incorrect.
 
 ## 3.3 The app shall allow the user Register as a new user
-**Description**
+**Description**:
 The app shall let the user register with the web application by creating a new account by entering credentials like First name, Last name, email and password. This action takes place if the new user clicks on the “Create Account” link on the Login Page.
 
-**Pre-condition** User clicks the “Create account” link on the login page.
+**Pre-condition**: User clicks the “Create account” link on the login page.
 
-**Post-condition** The user has to enter the credentials like First name, last name, email and password to create a new account. The data is stored in the database and the user is directed to the login page to log in as an authenticated user.
+**Post-condition**: The user has to enter the credentials like First name, last name, email and password to create a new account. The data is stored in the database and the user is directed to the login page to log in as an authenticated user.
+
+## 3.4 The app shall display the home screen for authorised user
+**Description**:
+The Where’s My Book home screen is displayed. The home screen contains a wide range of categories of books under which individual book information is displayed. On the Home page users can view the individual book, quick add to cart the individual book, search and filter the book search, go to cart page, go to login page, browse through different categories of books. Users can use a “Top Arrow ^” Button to go to the top of the homepage. Users can also Update or Add their User details by clicking the “Account” button on the Navigation bar.
+
+**Pre-condition**: User enters correct login credentials like the email and password and was authorised to go to the home page.
+
+**Post-condition**: Users can browse through different categories of books, view each book individually, read the individual book descriptions under the book cover image, View price of each book under the book cover of each book, Add to cart the individual book, view the product individually. Users can also search for a particular book and apply filters for the search results. Users can go to the login page from the home page. Users can view the cart page by clicking the cart link from the home page.
 
 ## Summarized Software Design Description Documentation
 
