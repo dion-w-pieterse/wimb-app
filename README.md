@@ -1,5 +1,8 @@
 # wimb-app (Where Is My Book?)
 
+## Application Setup
+Note: All usernames, passwords and database names and instances have been removed. You will need to set these up yourself.
+
 ## Summarized Software Requirements Specification
 
 ## 1. INTRODUCTION
