@@ -1,4 +1,4 @@
-# wimb-app (Where Is My Book)
+# wimb-app (Where Is My Book?)
 
 ## Summarized Software Requirements Specification
 
@@ -50,6 +50,28 @@ This SRS assumes that:
 - User can create a account
 - Users know how to search and apply filters to search
 - Users have a valid credit card or debit card to purchase the book
+
+## FUNCTIONAL REQUIREMENTS
+
+## USER VIEW
+
+## 3.1 The app shall display the home page
+**Description**
+After entering the link in the browser/ clicking the link to open in the browser, a home page will be displayed.
+**Pre-condition** – User has the link to the website.
+**Post-condition** – The home page is displayed.
+
+## 3.2 The app shall display the login page
+**Description**
+The user will be directed to the login page. If the user is registered with the web application user can enter the correct credentials in the spaces provided for email and password.
+**Pre-condition** User has valid credentials like the email and password registered with the web application.
+**Post-condition** The user is directed to the homepage if the credentials are authorized correctly and will be signed in, else the user is prompted that the entered credentials are incorrect.
+
+## 3.3 The app shall allow the user Register as a new user
+**Description**
+The app shall let the user register with the web application by creating a new account by entering credentials like First name, Last name, email and password. This action takes place if the new user clicks on the “Create Account” link on the Login Page.
+**Pre-condition** User clicks the “Create account” link on the login page.
+**Post-condition** The user has to enter the credentials like First name, last name, email and password to create a new account. The data is stored in the database and the user is directed to the login page to log in as an authenticated user.
 
 ## Summarized Software Design Description Documentation
 
