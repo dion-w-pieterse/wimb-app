@@ -7,7 +7,7 @@ Note: All usernames, passwords and database names and instances have been remove
 
 IP Address
 
-### DROPPING/CREATING THE DATABASE MANUALLY via Console and Python shell:
+### Dropping/Creating The Database Manually via Console and Python shell:
 
 - Create the sqlite3 database:
     - Navigate to the project directory.
