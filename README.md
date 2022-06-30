@@ -11,11 +11,11 @@ IP Address
 
 - create the sqlite3 database:
     - Navigate to the project directory.
-        - sqlite3 <database name>.db
-        - .tables
-        - .exit
+        - ```sqlite3 <database name>.db```
+        - ```.tables```
+        - ```.exit```
 - Use dbsetup.py python script:
-    - python dbsetup.py -u <username> -p <password>
+    - ```python dbsetup.py -u <username> -p <password>```
     - NOTE: The username and password that you use in the command above will be granted the admin user role.
 
 - Now you can run the app, and login under the admin account you just setup.
@@ -26,7 +26,7 @@ IP Address
 
     - create a project directory
     - create a virtual environment (MacOS):
-        - virtualenv <environment name>
+        - ```virtualenv <environment name>```
     - activate your environment (MacOS):
         - source <environment name>/bin/activate
     - install all libraries using the requirements.txt file provided:
