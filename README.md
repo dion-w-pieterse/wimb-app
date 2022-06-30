@@ -52,9 +52,9 @@ Note: All usernames, passwords and database names and instances have been remove
     - ```.exit```
 - Enter Python shell in console:
     - ```python```
-    - >>> ```from app import db```
-    - >>> ```db.create_all()```     Note: If you need to drop the tables: db.drop_all()
-    - >>> ```exit()```
+    - ```from app import db```
+    - ```db.create_all()```     Note: If you need to drop the tables: db.drop_all()
+    - ```exit()```
 - Check all the tables are present via console:
     - ```sqlite3 <database name>.db```
     - ```.tables```
