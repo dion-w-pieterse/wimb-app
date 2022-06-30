@@ -27,6 +27,30 @@ Below are the basic functions of Where’s My Book?:
 - Order Summary will be available to users after adding all the items to cart.
 - Website allows users to add/edit the delivery information and credit card details at checkout.
 
+## 2.3 Operating Environment
+Where’s My Book is an online web store developed using front-end technology like Bootstrap CSS Framework, JQuery. Back-end technology like Python Flask and DBMS, Object-Relational-Mapping (ORM), and Other DB Tools: SQLite3, SQLAlchemy, PugSQL. Group-Code-Development Plugin: Git Live. DVCS: Git. Graphical Tools: Adobe Photoshop, Adobe Illustrator. User-Experience Design Tool: Adobe XD. Hosting Service: AWS Lightsail – Amazon. Email Service: Gmail SMTP Server. Text-to-Speech Service: AWS Polly – Amazon. This web application can work on all the Operating Systems and can be opened on Google Chrome, Microsoft Edge and Mozilla Firefox.
+
+## 2.4 Similar System Information
+There are more than hundreds of web applications for selling books online. Topping the list are: Amazon Books, Barnes and Noble, Powell’s Book, AbeBooks, Book Depository, etc (Source: https://booksliced.com)
+
+## 2.5 User Characteristics
+This app is for users interested in buying books online in a hard copy format or online version. The app can be used by all age groups. Users should only have skills to add the details correctly in the web application as needed. The user friendly interface and easy to understand features will facilitate users to order books from the web application smoothly.
+
+## 2.6 Design and Implementation Constraints
+This web application is a simple online bookstore to buy books online and not an entertainment site. This website will be able to work on all the Operating systems which have access to browsers such as Google Chrome, Mozilla Firefox and Microsoft Edge. This website needs the user to be authenticated so as to order books through the website. Unauthorized users will only be able to view the home page and search for books.
+
+## 2.7 Assumptions
+This SRS assumes that:
+- Users understands English Language
+- User has a device with accessibility to a browser
+- User has connectivity to internet
+- User can access and use a browser
+- User can access to link and access the website
+- User has a valid Email address
+- User can create a account
+- Users know how to search and apply filters to search
+- Users have a valid credit card or debit card to purchase the book
+
 ## Summarized Software Design Description Documentation
 
 ### General Overview
