@@ -22,7 +22,7 @@ Note: All usernames, passwords and database names and instances have been remove
 
 - create a project directory
 - create a virtual environment (MacOS):
-    - ```virtualenv \<environment name\>```
+    - ```virtualenv <environment name>```
 - activate your environment (MacOS):
     - ```source <environment name>/bin/activate```
 - install all libraries using the requirements.txt file provided:
