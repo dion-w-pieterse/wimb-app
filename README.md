@@ -41,5 +41,11 @@ You can either add a book to cart from Homepage, Search results page or Individu
 ## 9. Cart Page
 When you click the Cart option on the Navigation Bar of any page you will be directed to the Cart Page. Here you will see your Order Summary Which contains the details like Number of Items in cart, Grand total mpf your order, Tax, The Item Information, Details of the book also you can adjust the book quantity by clicking '+' to increment the quantity of books and '_' to decrement the quantity of books. When you adjust the order quantity the price will be updated accordingly. Once you are done adding books to cart you can either click “Update Cart” Button so as to update the recent changes you made to cart or you can click “Proceed to Checkout” button to go to the checkout page.
 
+## 10. Checkout Page
+On the Checkout page you will see the book details you have added to the cart. You will have to either update your Customer information if we do not have that in our database, or else it will be pre populated. You can view the order summary, Shipping details on this page. Once you are done and satisfied with your cart you can make a payment for the book you want to purchase and successfully place an order by clicking on the “Place Order” button.
+
+## 11. Confirmation Page
+Once you place an order on the checkout page you will be directed to a Confirmation page. Here you will view a message something like below, confirming your order placement. You can go back to Homepage by clicking on the “Return Home” button. You can also “Logout” using the “Logout” option on the Navigation Bar.
+
 
 ## Documentation is pending. Please check back soon.
