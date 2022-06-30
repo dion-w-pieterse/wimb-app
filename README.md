@@ -38,5 +38,8 @@ On the Individual Book Page, you can Listen to the sample book audio by clicking
 ## 8. Add Book to Cart
 You can either add a book to cart from Homepage, Search results page or Individual Book Page. When you add a book to cart you will get this screen displayed to confirm that the book is added to cart. On clicking “Return” you will return to the Individual book page of that book added to cart.
 
+## 9. Cart Page
+When you click the Cart option on the Navigation Bar of any page you will be directed to the Cart Page. Here you will see your Order Summary Which contains the details like Number of Items in cart, Grand total mpf your order, Tax, The Item Information, Details of the book also you can adjust the book quantity by clicking '+' to increment the quantity of books and '_' to decrement the quantity of books. When you adjust the order quantity the price will be updated accordingly. Once you are done adding books to cart you can either click “Update Cart” Button so as to update the recent changes you made to cart or you can click “Proceed to Checkout” button to go to the checkout page.
+
 
 ## Documentation is pending. Please check back soon.
