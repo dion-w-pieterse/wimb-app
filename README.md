@@ -20,15 +20,15 @@ Note: All usernames, passwords and database names and instances have been remove
 
 ### Setup The Application (No repo clone process)
 
-    - create a project directory
-    - create a virtual environment (MacOS):
-        - ```virtualenv \<environment name\>```
-    - activate your environment (MacOS):
-        - ```source <environment name>/bin/activate```
-    - install all libraries using the requirements.txt file provided:
-        - ```pip install -r requirements.txt```
-    - Your environment is setup and now you can run your app.
-        - ```python app.py```
+- create a project directory
+- create a virtual environment (MacOS):
+    - ```virtualenv \<environment name\>```
+- activate your environment (MacOS):
+    - ```source <environment name>/bin/activate```
+- install all libraries using the requirements.txt file provided:
+    - ```pip install -r requirements.txt```
+- Your environment is setup and now you can run your app.
+    - ```python app.py```
 
 
 ### Database User Created (if you use the database provided in the repo, these users are already rows in the DB):
@@ -53,7 +53,7 @@ Note: All usernames, passwords and database names and instances have been remove
     - Enter Python shell in console:
         - ```python```
         - >>> ```from app import db```
-        - >>> ```db.create_all()```     *** Note: If you need to drop the tables: db.drop_all() ***
+        - >>> ```db.create_all()```     Note: If you need to drop the tables: db.drop_all()
         - >>> ```exit()```
     - Check all the tables are present via console:
         - ```sqlite3 <database name>.db```
