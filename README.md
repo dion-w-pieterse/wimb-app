@@ -1,5 +1,33 @@
-# wimb-app
-## Where Is My Book?
+# wimb-app (Where Is My Book)
+
+## Summarized Software Requirements Specification
+
+## 1. INTRODUCTION
+
+## 1.1 Purpose
+This SRS document offers a description of the software requirements. The document will explain the purpose of the website, its functionalities, including the software requirements and overall goals to be accomplished.
+
+## 1.2 Scope of the Problem
+As the world has transitioned from physical stores to digital market an Online Bookstore is a boon to readers to buy a book online delivered to their doors on a few clicks. As the other online bookstores are available in the market, we will be having our own online bookstore website hosted on the internet for users to order books online. The users can browse through various categories of books and select and order desired books online. There will be some additional features added to the bookstore to the user side as well as the admin side of the website.
+
+## 1.3 Intended Audience
+The Intended Audience of this document includes Professor Lidia Morrison, and the members of our group to verify the functionality of the software. Other users include all students enrolled in CPSC 462 for (Spring 2021) at California State University, Fullerton. The application is intended for individuals in need of buying books online.
+
+## 2. OVERALL DESCRIPTION
+## 2.1 User Objective
+Where’s My Book? Is a web application that focuses on providing a medium by which a user can buy a book online. This application will help users save time by physically going to store and find the desired book. Our web application will save the users time as users can just enter the name of the book desired or search for it in different categories made available on the web store. Figure 6.1 shows the Where’s My Book interface.
+
+## 2.2 Product Functions
+Where’s My Book is an online web store to purchase books. It allows users to view books in different genres, varieties, categories, etc. Users can select books over a wide range of categories and browse through them with brief details of each book mentioned on the individual book page. This web application facilitates users to search a book individually by typing the credentials related to that book in the search bar and also can filter the search according to their will. Users can add to cart as many books they want and can adjust the quantity of books they want to order. Users have the option to pay with credit card or debit card and get their books delivered to their doorsteps. Where’s My Book gives a detailed order summary of each order of the user to them before placing the order.
+Below are the basic functions of Where’s My Book?:
+- The website allows the non-registered users to browse through the homepage and take a look at the books.
+- The website allows users to filter their search with different options.
+- Authenticated users can order books from the online web store Where’s My Book.
+- The website allows users to select books from a wide range of categories.
+- Order Summary will be available to users after adding all the items to cart.
+- Website allows users to add/edit the delivery information and credit card details at checkout.
+
+## Summarized Software Design Description Documentation
 
 ### General Overview
 In the modern world where anything and everything can be bought online from multiple separate sites, the website Where’s My Book? dares to offer a selection of books so varied any book can be found and purchased easily. This site not only tries to compete with other online bookstores but with physical bookstores as well by offering convenient book searching, audiobook capability, and short shipping times.
