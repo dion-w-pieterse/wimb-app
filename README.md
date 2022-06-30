@@ -5,7 +5,7 @@ Note: All usernames, passwords and database names and instances have been remove
 
 ### IP Address of hosted site: 
 
-IP Address
+```<IP Address>```
 
 ### Dropping/Creating The Database Manually via Console and Python shell:
 
