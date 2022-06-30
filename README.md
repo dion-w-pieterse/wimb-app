@@ -9,9 +9,9 @@ IP Address
 
 ### DROPPING/CREATING THE DATABASE MANUALLY via Console and Python shell:
 
-- create the sqlite3 database:
+- Create the sqlite3 database:
     - Navigate to the project directory.
-        - ```sqlite3 \<database name\>.db```
+        - ```sqlite3 <database_name>.db```
         - ```.tables```
         - ```.exit```
 - Use dbsetup.py python script:
