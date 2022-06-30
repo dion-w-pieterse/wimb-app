@@ -1,7 +1,7 @@
 # wimb-app (Where Is My Book?)
 
 ## Application Setup
-Note: All usernames, passwords and database names and instances have been removed. You will need to set these up yourself.
+Note: All usernames, passwords and database names and instances have been removed. You will need to set these up yourself. All images have been removed, and replaced with placeholder images.
 
 ### Dropping/Creating The Database Manually via Console and Python shell:
 
