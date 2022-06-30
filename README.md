@@ -205,6 +205,176 @@ On the navigation bar of each page is the search bar. Users can enter text relat
 
 **Post-condition**: Users can see displayed results of their search. Users can apply filters to the search results and view individual books description and details beside the cover page. Users can click on a book to visit its individual book page.
 
+## 3.12 The app shall allow the user to view the cart page
+**Description**:
+The user can click on the cart link on the navigation bar to get to the cart page. The users can view the detailed order summary on this page. Users can adjust the quantity of books by clicking on the + and - buttons to increment and decrement the book quantity respectively. When the user clicks on the Update cart button the cart is updated with the correct amount of books and rate of the books according to the adjustments done by the user. After clicking the proceed to checkout button user will be directed to the checkout page.
+
+**Pre-condition**: User clicks on the cart link on the navigation bar.
+
+**Post-condition**: User views the cart summary on cart page. Adjusts the quantity of books. Users can go to the checkout page on the button click of the checkout page.
+
+## 3.13 The app shall allow the user to view the checkout page
+**Description**:
+After clicking on the checkout button on the cart page, the user will be directed to the checkout page. Users can see the detailed order summary on the checkout page. The user can see the shipping details on this checkout page. Users can see the customer details form which gives delivery information for the book, this field will be pre populated if the user information is present in the database. User needs to enter the credit card details on this page so as to make the payment for the order to be delivered. After clicking the “Place Order” button the order will be placed for the books after verification of the credit card details. The user will receive a confirmation Email containing the order details in it.
+
+**Pre-condition**: The user clicks on the proceed to checkout page on the cart page.
+
+**Post-condition**: Order for books will be placed and users will be directed to the confirmation page. Users will receive an Confirmation email of their order.
+
+## 3.14 The app shall display the confirmation page
+**Description**:
+After successfully placing the order for books the user will be directed to the confirmation page. An order confirmation message is displayed on this page. Users can click the home button to be redirected to the home page.
+
+**Pre-condition**: The user successfully makes the payment for the order and successfully places the order.
+
+**Post-condition**: An order successful message will be displayed and the user can go to the home page.
+
+## 3.15 The app shall allow the user to logout of the web application
+**Description**:
+The user can log out of the web app by selecting the “Logout” button from the navigation bar.
+
+**Pre-condition**: User clicks on the “Logout” button from the navigation bar.
+
+**Post-condition**: User is logged out of the application and taken back to the home page.
+
+## 3.16 The app shall allow the users to set a new password
+**Description**:
+The user can request a new password to enter the website if the user forgets the password. When the user clicks on the “Forgot Password” link on the login page the user will get an email with the temporary password so the user can access their accounts. When the user clicks the “Forgot Password” link, the user will be directed to the Forgot Password Form. Here on the Forgot Password From user will have to enter the email address entered while registration to get the email for temporary password. After logging in with the temporary password, the user will see a confirmation message and users can reset a new password by clicking the “Rest” option on the Navigation bar.
+
+**Pre-condition**: User clicks the forgot password link on login page.
+
+**Post-condition**: User receives an email with temporary login details to access their account and reset a new password.
+
+## 3.17 The app shall allow the users to read the about us page with Animation.
+**Description**:
+The user can read the About us information i.e the developers of the website information, The qualities of the company, Interesting facts about the website; on About us page, by clicking on the “About button” on the navigation bar or below in the footer.
+
+**Pre-condition**: User clicks the About us button on the navigation bar or the footer.
+
+**Post-condition**: User is directed to the About Us page, can see an Animation on the page and can read the details of the website and developers on About Us page.
+
+## 3.18 The app shall allow the users to update their Information
+**Description**:
+The authorised user can click on the “Account” button on the navigation bar. The user will be directed to the update details update form. Here the user information available in the database will be pre populated. Users can update or add any new information in this form and click on the “Update Information” button to confirm the changes to be saved in the database.
+
+**Pre-condition**: User clicks the “Account” button on the navigation bar.
+
+**Post-condition**: Users directed to the update details update form. Users can update the information and that will be saved in the database after clicking the “Update Information” button.
+
+## ADMIN VIEW
+## 3.19 The app shall allow the admin to login
+**Description**:
+The authorised admin will already have their login credentials, the username and password saved in the database. Admin shall enter the correct credentials on the login page of the web application, like the username and password to get access to the admin view side of the application. After clicking the “Login” button admin will be directed to the Homepage of Where’s My Book?
+
+**Pre-condition**: Admin opens the login page, enters the correct credentials to login.
+
+**Post-condition**: Admin credentials verified with database and Admin directed to authorized admin homepage.
+
+## 3.20 The app shall allow the admin to reset password
+**Description**:
+The admin can request a new password to enter the website if the admin forgets the password. When the admin clicks on the forgot password link on the login page the admin will get an email with the username, temporary password so the admin can access their accounts. After logging in with the temporary password admin can reset a new password.
+
+**Pre-condition**: Admin clicks the forgot password link on the login page.
+
+**Post-condition**: Admin receives an email with temporary login details to access their account and reset a new password.
+
+## 3.21 The app shall have access to the Admin Dashboard
+**Description**:
+The admin can click on the Admin Dashboard button on the navigation bar for admin and have access to the different controls admin can control and manage.
+
+**Pre-condition**: Admin clicks the Admin Dashboard button.
+
+**Post-condition**: Admin directed to Admin Dashboard.
+
+## 3.22 The app shall allow the admin to view the homepage
+**Description**:
+The admin can also be a regular user and browse through different categories of books and place an order for books like the regular user following the same steps. The admin will have all the access to the website as a regular user. Admin homepage will have the similar features like the user view mentioned above.
+
+**Pre-condition**: Admin clicks on the Home button on the navigation bar.
+
+**Post-condition**: Admin is directed to the homepage.
+
+## 3.23 The app shall allow the admin to manage the admin and users records
+**Description**:
+Admin has access to the admin dashboard under which there is a User link on the navigation bar. On this page Admin can edit/delete admin/user records, create new admin/user records, export the record in any file format, filter the user table according to username, password or role, delete the current selection and search admin/user.
+
+**Pre-condition**: Admin clicks on the User button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the admin/user records.
+
+## 3.24 The app shall allow the admin to manage the users details
+**Description**:
+Admin has access to the admin dashboard under which there is a User Details link on the navigation bar. On this page Admin can edit/delete user records, create new user records, export the record in any file format, filter the user table according to username, password or
+role, delete the current selection and search user.
+
+**Pre-condition**: Admin clicks on the User Details button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the user details records.
+
+## 3.25 The app shall allow the admin to manage the book records
+**Description**:
+Admin has access to the admin dashboard under which there is a Book on the navigation bar. On this page Admin can edit/delete book records, create new book records, export the book record in any file format, filter the book table according to filters given, delete the current selection of book records and search book records.
+
+**Pre-condition**: Admin clicks on the Book button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the book records.
+
+## 3.26 The app shall allow the admin to Book Status
+**Description**:
+Admin has access to the admin dashboard under which there is a Book Status link on the navigation bar. On this page Admin can view the book id and the status of books. Admin can edit/delete a record, create a new book status record, export the record in any file format, filter the table according to Status Desc, delete the current selection and search a record.
+
+**Pre-condition**: Admin clicks on the Book Status button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Book Status records.
+
+## 3.27 The app shall allow the admin to manage the reviews
+**Description**:
+Admin has access to the admin dashboard under which there is a Reviews link on the navigation bar. On this page Admin can edit/delete a review, create a new review, export the record in any file format, filter the reviews table according to Review Desc, delete the current selection and search reviews.
+
+**Pre-condition**: Admin clicks on the Reviews button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Reviews records.
+
+## 3.28 The app shall allow the admin to manage the Book Order
+**Description**:
+Admin has access to the admin dashboard under which there is a Book Order link on the navigation bar On this page Admin can edit/delete book order records, create new book order record, export the record in any file format, filter the book orders table according to filters available, delete the current selection and search a book order record.
+
+**Pre-condition**: Admin clicks on the Book Order button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Book Order records.
+
+## 3.29 The app shall allow the admin to manage the Book Order Item Records
+**Description**:
+Admin has access to the admin dashboard under which there is a Book Order Item link on the navigation bar On this page Admin can edit/delete book order item records, create new book order item record, export the record in any file format, filter the book orders item table according to filters available, delete the current selection and search a book order item record.
+
+**Pre-condition**: Admin clicks on the Book Order Item button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Book Order Item records.
+
+## 3.30 The app shall allow the admin to manage the Genre
+**Description**:
+Admin has access to the admin dashboard under which there is a Genre link on the navigation bar. On this page Admin can edit/delete any Genre records, create new Genre records, export the record in any file format, filter the Genre table according to filters available, delete the current selection and search for a Genre record.
+
+**Pre-condition**: Admin clicks on the Genre button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Genre records.
+
+## 3.31 The app shall allow the admin to manage the Images uploaded for the books
+**Description**:
+Admin has access to the admin dashboard under which there is a Image Uploads link on the navigation bar. On this page Admin can edit/delete a Book Image, create a new book image record, and delete the current selection.
+
+**Pre-condition**: Admin clicks on the Image Upload button on the navigation bar under the Admin Dashboard.
+
+**Post-condition**: Admin can manage the Image Upload records.
+
+## 3.32 The app shall allow the admin to logout of the web application
+**Description**:
+The Admin can log out of the web app by selecting the “Logout” button from the navigation bar.
+
+**Pre-condition**: Admin clicks on the “Logout” button from the navigation bar.
+
+**Post-condition**: Admin is logged out of the application and taken back to the home page.
+
 ## Summarized Software Design Description Documentation
 
 ### General Overview
