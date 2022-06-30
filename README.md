@@ -148,6 +148,63 @@ The Where’s My Book home screen is displayed. The home screen contains a wide 
 
 **Post-condition**: Users can browse through different categories of books, view each book individually, read the individual book descriptions under the book cover image, View price of each book under the book cover of each book, Add to cart the individual book, view the product individually. Users can also search for a particular book and apply filters for the search results. Users can go to the login page from the home page. Users can view the cart page by clicking the cart link from the home page.
 
+## 3.5 The app shall allow the user to Add/Update the User Details Information
+**Description**:
+The app shall allow the Authorized user to Add/Update the User Details Information on the User Details Update Form Page. Users can access this page by clicking on the “Account” button on the Navigation bar. Here the user can enter or update the information in the text
+fields provided like, First Name, Last Name, Email, Phone, Address, City, State, Zip-Code, Country, Credit Card type. When the user is done entering the information, the user can click “Update Your Information” so the information is saved into the database. When this information is saved in the database the data will be pre populated for the user in the checkout page.
+
+**Pre-condition**: User clicks the “Account” Button on the Navigation Bar.
+
+**Post-condition**: The user enters information in the text fields provided like, First Name, Last Name, Email, Phone, Address, City, State, Zip-Code, Country, Credit Card type. Updates the Information and saves it for future use.
+
+## 3.6 The app shall allow the user to view individual product
+**Description**:
+The user can click on the button “View Item” under the cover page of any individual book displayed, and can go to an individual product page to get brief information of a book. On the Individual product page the user can see the cover photo of the book. Read a detailed description of the book, check the price of the book. View different information related to the book. Users can go back to the home page by clicking the back button or home link. The user can search for books and add filters to the search on the search bar. Users can add book to the cart. Users can go to the cart page by clicking the cart link. Authorised Users can enter a review of the individual book in the provided text field for review and submit the review by clicking the submit review button. Users can also view the reviews by other users on this page.
+
+**Pre-condition**: User clicks the “View Button” on the individual item displayed on the home page.
+
+**Post-condition**: Users can see the individual product page, read the detailed description of the book, read the information related to the book, add book to cart, go to cart page, search a book and add filters to the search result, add reviews, go to home page.
+
+## 3.7 The app shall allow the user to Add book to cart from the Individual Product Page
+**Description**:
+Users can click on the “Add to Cart” button to add the book to the cart for delivery on the Individual Product Page. Users can adjust the quantity of the books by the “+” and “-” quantity buttons provided to increment and decrement the book quantity respectively. The user can manually input the quantity of books in the text area provided between “+” and “-” buttons. The quantity of the book as well as the price according to the quantity is adjusted in the cart. A confirmation of the book and items added to cart page is displayed to ensure that the book is added to cart.
+
+**Pre-condition**: User is on the Individual Book Page and clicks on the “Add to Cart” Button.
+
+**Post-condition**: The books are added to cart and cart quantity and price is adjusted according to the user selection.
+
+## 3.8 The app shall allow the Authorised user to add and view Reviews for the book on Individual Product Page
+**Description**:
+Authorised Users(Users who have an account registered with Where’s My Book?) can enter the Review for the particular book in the text area provided under the book cover page and click on the “Add Review '' button to add the Review for the book on the Individual Product Page. Unregistered as well as registered users can view the reviews for the book on the individual book page.
+
+**Pre-condition**: User is on the Individual Book Page, enters review in the text area and clicks on the “Add Review” Button to add reviews for a book.
+
+**Post-condition**: The Review is posted in the review section. Users view reviews in the review section.
+
+## 3.9 The app shall allow the user to Play an audio Sample
+**Description**:
+When the user is on the individual book page the user can play a sample audio of that book which is below the Book Title on the Individual Book Page. When the user clicks on the Play button of the Audio, a sample chapter will be played for that book in English Language.
+
+**Pre-condition**: User is on the Individual Book Page and clicks on the play audio button.
+
+**Post-condition**: The user will be able to listen to the audio sample provided for the book.
+
+## 3.10 The app shall allow the user to quick add a book to cart on Home Page.
+**Description**:
+The user can click on the “Quick Add Cart” button below the individual book description on the homepage to add the book to cart. A confirmation of the book and items added to cart page is displayed to ensure that the book is added to cart. The cart items and price is updated in the database according to the items added to cart.
+
+**Pre-condition**: User clicks on the quick add to cart button.
+
+**Post-condition**: The user is directed to the confirmation page where the user can see the number of items added to cart. Items in cart are updates and price also updates. Book is successfully added to the cart.
+
+## 3.11 The app shall allow the users to search a book
+**Description**:
+On the navigation bar of each page is the search bar. Users can enter text related to books to search for books and then can add filters like price filters, genre filters, category filters to make their search easier. In the search results the user can view the book description and details related to the book besides the cover picture of the book.
+
+**Pre-condition**: The user enters a search text in the search bar present on the navigation bar.
+
+**Post-condition**: Users can see displayed results of their search. Users can apply filters to the search results and view individual books description and details beside the cover page. Users can click on a book to visit its individual book page.
+
 ## Summarized Software Design Description Documentation
 
 ### General Overview
